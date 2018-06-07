@@ -32,5 +32,9 @@ namespace GSB_TGT
             
         }
 
+        private void dgvInteraction_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

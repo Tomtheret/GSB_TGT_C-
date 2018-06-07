@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabProduits = new System.Windows.Forms.TabPage();
             this.btnProDissocier = new System.Windows.Forms.Button();
@@ -38,7 +38,6 @@
             this.btnProAssocier = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dgvInteraction = new System.Windows.Forms.DataGridView();
-            this.proInteraction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txbProRechercher = new System.Windows.Forms.TextBox();
@@ -49,6 +48,15 @@
             this.btnProSupprimer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvMedicaments = new System.Windows.Forms.DataGridView();
+            this.proNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proPresentation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proPrixEchantillon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proDosage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proEffetTherap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proContreInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proFamille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proPrixHt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.txbProPrixEchantillon = new System.Windows.Forms.TextBox();
@@ -137,15 +145,8 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
-            this.proNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proPresentation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proPrixEchantillon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proDosage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proEffetTherap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proContreInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proFamille = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proPrixHt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proInteraction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -262,20 +263,14 @@
             this.dgvInteraction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvInteraction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInteraction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.proInteraction});
+            this.proInteraction,
+            this.Column1});
             this.dgvInteraction.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvInteraction.Location = new System.Drawing.Point(6, 21);
             this.dgvInteraction.Name = "dgvInteraction";
             this.dgvInteraction.Size = new System.Drawing.Size(288, 159);
             this.dgvInteraction.TabIndex = 0;
-            // 
-            // proInteraction
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.proInteraction.DefaultCellStyle = dataGridViewCellStyle2;
-            this.proInteraction.HeaderText = "Intéractions";
-            this.proInteraction.Name = "proInteraction";
-            this.proInteraction.Width = 245;
+            this.dgvInteraction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInteraction_CellContentClick);
             // 
             // groupBox3
             // 
@@ -387,6 +382,67 @@
             this.dgvMedicaments.Name = "dgvMedicaments";
             this.dgvMedicaments.Size = new System.Drawing.Size(641, 263);
             this.dgvMedicaments.TabIndex = 0;
+            // 
+            // proNumero
+            // 
+            this.proNumero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.proNumero.HeaderText = "Numéro";
+            this.proNumero.Name = "proNumero";
+            this.proNumero.Width = 69;
+            // 
+            // proPresentation
+            // 
+            this.proPresentation.HeaderText = "Présentation";
+            this.proPresentation.Name = "proPresentation";
+            // 
+            // proPrixEchantillon
+            // 
+            this.proPrixEchantillon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.proPrixEchantillon.HeaderText = "Prix Echantillon";
+            this.proPrixEchantillon.Name = "proPrixEchantillon";
+            this.proPrixEchantillon.Width = 96;
+            // 
+            // proDosage
+            // 
+            this.proDosage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.proDosage.HeaderText = "Dosage";
+            this.proDosage.Name = "proDosage";
+            this.proDosage.Width = 69;
+            // 
+            // proNom
+            // 
+            this.proNom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.proNom.HeaderText = "Nom";
+            this.proNom.Name = "proNom";
+            this.proNom.Width = 54;
+            // 
+            // proEffetTherap
+            // 
+            this.proEffetTherap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.proEffetTherap.HeaderText = "Effet thérapeutiques";
+            this.proEffetTherap.Name = "proEffetTherap";
+            this.proEffetTherap.Width = 116;
+            // 
+            // proContreInd
+            // 
+            this.proContreInd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.proContreInd.HeaderText = "Contre-indications";
+            this.proContreInd.Name = "proContreInd";
+            this.proContreInd.Width = 116;
+            // 
+            // proFamille
+            // 
+            this.proFamille.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.proFamille.HeaderText = "Famille";
+            this.proFamille.Name = "proFamille";
+            this.proFamille.Width = 64;
+            // 
+            // proPrixHt
+            // 
+            this.proPrixHt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.proPrixHt.HeaderText = "Prix HT";
+            this.proPrixHt.Name = "proPrixHt";
+            this.proPrixHt.Width = 49;
             // 
             // groupBox2
             // 
@@ -1206,66 +1262,17 @@
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
             // 
-            // proNumero
+            // proInteraction
             // 
-            this.proNumero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.proNumero.HeaderText = "Numéro";
-            this.proNumero.Name = "proNumero";
-            this.proNumero.Width = 69;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.proInteraction.DefaultCellStyle = dataGridViewCellStyle1;
+            this.proInteraction.HeaderText = "Le médicament";
+            this.proInteraction.Name = "proInteraction";
             // 
-            // proPresentation
+            // Column1
             // 
-            this.proPresentation.HeaderText = "Présentation";
-            this.proPresentation.Name = "proPresentation";
-            // 
-            // proPrixEchantillon
-            // 
-            this.proPrixEchantillon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.proPrixEchantillon.HeaderText = "Prix Echantillon";
-            this.proPrixEchantillon.Name = "proPrixEchantillon";
-            this.proPrixEchantillon.Width = 96;
-            // 
-            // proDosage
-            // 
-            this.proDosage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.proDosage.HeaderText = "Dosage";
-            this.proDosage.Name = "proDosage";
-            this.proDosage.Width = 69;
-            // 
-            // proNom
-            // 
-            this.proNom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.proNom.HeaderText = "Nom";
-            this.proNom.Name = "proNom";
-            this.proNom.Width = 54;
-            // 
-            // proEffetTherap
-            // 
-            this.proEffetTherap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.proEffetTherap.HeaderText = "Effet thérapeutiques";
-            this.proEffetTherap.Name = "proEffetTherap";
-            this.proEffetTherap.Width = 116;
-            // 
-            // proContreInd
-            // 
-            this.proContreInd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.proContreInd.HeaderText = "Contre-indications";
-            this.proContreInd.Name = "proContreInd";
-            this.proContreInd.Width = 116;
-            // 
-            // proFamille
-            // 
-            this.proFamille.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.proFamille.HeaderText = "Famille";
-            this.proFamille.Name = "proFamille";
-            this.proFamille.Width = 64;
-            // 
-            // proPrixHt
-            // 
-            this.proPrixHt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.proPrixHt.HeaderText = "Prix HT";
-            this.proPrixHt.Name = "proPrixHt";
-            this.proPrixHt.Width = 49;
+            this.Column1.HeaderText = "Intéragie avec";
+            this.Column1.Name = "Column1";
             // 
             // FrmGSB
             // 
@@ -1393,7 +1400,6 @@
         private System.Windows.Forms.ComboBox cbxProAssociation2;
         private System.Windows.Forms.ComboBox cbxProAssociation1;
         private System.Windows.Forms.Button btnProAssocier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proInteraction;
         private System.Windows.Forms.DataGridViewTextBoxColumn praCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn praTelephone;
         private System.Windows.Forms.DataGridViewTextBoxColumn praContact;
@@ -1426,6 +1432,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn proContreInd;
         private System.Windows.Forms.DataGridViewTextBoxColumn proFamille;
         private System.Windows.Forms.DataGridViewTextBoxColumn proPrixHt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proInteraction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
 
