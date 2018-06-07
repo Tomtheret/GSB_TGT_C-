@@ -21,3 +21,14 @@ H:\Cours\Projet_gsb_tgt\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.GenerateResourc
 G:\GSB\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe.config
 G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.exe
 G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.pdb
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe.config
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.pdb
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csprojAssemblyReference.cache
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.FrmConnexion.resources
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.FrmGSB.resources
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.Properties.Resources.resources
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.GenerateResource.cache
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.CoreCompileInputs.cache
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.exe
+F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.pdb
