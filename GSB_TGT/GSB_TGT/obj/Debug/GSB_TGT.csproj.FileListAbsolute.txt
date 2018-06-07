@@ -18,3 +18,6 @@ H:\Cours\Projet_gsb_tgt\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.FrmConnexion.resources
 H:\Cours\Projet_gsb_tgt\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.FrmGSB.resources
 H:\Cours\Projet_gsb_tgt\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.Properties.Resources.resources
 H:\Cours\Projet_gsb_tgt\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.GenerateResource.Cache
+G:\GSB\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe.config
+G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.exe
+G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.pdb
