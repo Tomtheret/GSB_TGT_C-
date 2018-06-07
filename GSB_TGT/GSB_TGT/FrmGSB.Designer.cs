@@ -145,8 +145,8 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
-            this.proInteraction = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proInteraction1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proInteraction2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -263,8 +263,8 @@
             this.dgvInteraction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvInteraction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInteraction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.proInteraction,
-            this.Column1});
+            this.proInteraction1,
+            this.proInteraction2});
             this.dgvInteraction.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvInteraction.Location = new System.Drawing.Point(6, 21);
             this.dgvInteraction.Name = "dgvInteraction";
@@ -1262,17 +1262,19 @@
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
             // 
-            // proInteraction
+            // proInteraction1
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.proInteraction.DefaultCellStyle = dataGridViewCellStyle1;
-            this.proInteraction.HeaderText = "Le médicament";
-            this.proInteraction.Name = "proInteraction";
+            this.proInteraction1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.proInteraction1.HeaderText = "Le médicament";
+            this.proInteraction1.Name = "proInteraction1";
+            this.proInteraction1.Width = 122;
             // 
-            // Column1
+            // proInteraction2
             // 
-            this.Column1.HeaderText = "Intéragie avec";
-            this.Column1.Name = "Column1";
+            this.proInteraction2.HeaderText = "Intéragie avec";
+            this.proInteraction2.Name = "proInteraction2";
+            this.proInteraction2.Width = 122;
             // 
             // FrmGSB
             // 
@@ -1432,8 +1434,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn proContreInd;
         private System.Windows.Forms.DataGridViewTextBoxColumn proFamille;
         private System.Windows.Forms.DataGridViewTextBoxColumn proPrixHt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proInteraction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proInteraction1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proInteraction2;
     }
 }
 
