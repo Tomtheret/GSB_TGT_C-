@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+
 namespace GSB_TGT
 {
     class DAOFactory
@@ -14,7 +15,7 @@ namespace GSB_TGT
         public DAOFactory()
         {
         }
-        public void connect()
+        public void connexion()
         {
             try
             {
@@ -23,7 +24,7 @@ namespace GSB_TGT
             }
             catch (Exception ex) { MessageBox.Show("Erreur : " + ex.Message); }
         }
-        public void disconnect()
+        public void deconnexion()
         {
             maConnexion.Close();
         }

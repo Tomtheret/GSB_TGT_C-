@@ -32,7 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txbLogin = new System.Windows.Forms.TextBox();
             this.txbMdp = new System.Windows.Forms.TextBox();
-            this.txbOk = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,15 +64,15 @@
             this.txbMdp.Size = new System.Drawing.Size(147, 20);
             this.txbMdp.TabIndex = 2;
             // 
-            // txbOk
+            // btnOk
             // 
-            this.txbOk.Location = new System.Drawing.Point(98, 213);
-            this.txbOk.Name = "txbOk";
-            this.txbOk.Size = new System.Drawing.Size(75, 23);
-            this.txbOk.TabIndex = 3;
-            this.txbOk.Text = "OK";
-            this.txbOk.UseVisualStyleBackColor = true;
-            this.txbOk.Click += new System.EventHandler(this.txbOk_Click);
+            this.btnOk.Location = new System.Drawing.Point(98, 213);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 3;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // label1
             // 
@@ -110,7 +110,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txbOk);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txbMdp);
             this.Controls.Add(this.txbLogin);
             this.Controls.Add(this.pictureBox1);
@@ -127,7 +127,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txbLogin;
         private System.Windows.Forms.TextBox txbMdp;
-        private System.Windows.Forms.Button txbOk;
+        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
