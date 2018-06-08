@@ -36,5 +36,10 @@ namespace GSB_TGT
         {
 
         }
+
+        private void tabVisiteur_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
