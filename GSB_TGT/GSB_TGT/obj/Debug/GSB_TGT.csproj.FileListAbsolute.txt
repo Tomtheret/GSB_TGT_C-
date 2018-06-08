@@ -32,3 +32,6 @@ F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.GenerateResource
 F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.CoreCompileInputs.cache
 F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.exe
 F:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.pdb
+F:\BTS\Semestre_3\PPE3\GSB_TGT_C-\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe.config
+F:\BTS\Semestre_3\PPE3\GSB_TGT_C-\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.exe
+F:\BTS\Semestre_3\PPE3\GSB_TGT_C-\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.pdb
