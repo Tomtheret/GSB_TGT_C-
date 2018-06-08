@@ -21,7 +21,7 @@ namespace GSB_TGT
 		private float pxEchantillon;
 		private int idFamille;
 
-        public int d_produit
+        public int Id_produit
         {
             get
             {
