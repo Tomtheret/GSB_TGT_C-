@@ -52,12 +52,27 @@ namespace GSB_TGT
             listfamille = DAOFamilleMedoc.listeFamilles();
             dgvMedicaments.DataSource = null;
             dgvMedicaments.DataSource = listMedoc;
+
+            cbxProFamille.DataSource = null;
+
+            foreach (FamilleMedoc listfamill in listfamille)
+            {
+                cbxProFamille.Items.Add(listfamill.NomFamille);
+                cbxProFamille.ValueMember = listfamill.IdFamille.ToString();
+            }
+
         }
 
         private void btnProAjouter_Click(object sender, EventArgs e)
         {
-            string requete = "insert into medicament values(" + txbProNum.Text + "," + txbProNom.Text + ","+ txbProEffet.Text +","
-                + txbProContreInd.Text + ","+ txbProPresentation+","+ txbProDosage + "," + txbProPrix.Text + "," +txbProPrixEchantillon.Text +"," + cbxProFamille.Text +"); ";
+            Produit p = new Produit(Int32.Parse(txbProNum.Text), txbProNom.Text, txbProEffet.Text, txbProContreInd.Text, txbProPresentation.Text, txbProDosage.Text, float.Parse(txbProPrix.Text), float.Parse(txbProPrixEchantillon.Text) , Int32.Parse(cbxProFamille.ValueMember));
+            /*string requete = "insert into medicament values(" + txbProNum.Text + "," + txbProNom.Text + ","+ txbProEffet.Text +","
+                + txbProContreInd.Text + ","+ txbProPresentation.Text+","+ txbProDosage.Text + "," + txbProPrix.Text + "," +txbProPrixEchantillon.Text +"," + cbxProFamille.Text +"); ";*/
+            DAOProduit.setProduit(p);
+        }
+
+        private void txbProPrixEchantillon_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

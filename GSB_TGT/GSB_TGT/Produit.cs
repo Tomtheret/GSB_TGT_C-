@@ -170,6 +170,11 @@ namespace GSB_TGT
             MessageBox.Show("Produit non répertorié");
             return null;
         }
+
+        public static void setProduit (Produit p)
+        {
+
+        }
 	}
 
 }

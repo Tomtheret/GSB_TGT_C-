@@ -422,6 +422,7 @@
             this.txbProPrixEchantillon.Name = "txbProPrixEchantillon";
             this.txbProPrixEchantillon.Size = new System.Drawing.Size(100, 20);
             this.txbProPrixEchantillon.TabIndex = 17;
+            this.txbProPrixEchantillon.TextChanged += new System.EventHandler(this.txbProPrixEchantillon_TextChanged);
             // 
             // label25
             // 
