@@ -12,7 +12,7 @@ namespace GSB_TGT
     {
 		public static List<Produit> listeProduit()
 		{
-			string Req = "select M.id_produit,M.Nom_commercial,M.Effet_therapeutique,M.Contre_indication,M.Presentation,M.Dosage,M.pxHT,M.pxEchantillon,F.nomFamille FROM medicament AS M INNER JOIN famille AS F on M.idFamille = F.idFamille order by M.id_produit;";
+			string Req = "select M.id_produit,M.nom_commercial,M.effet_therapeutique,M.contre_indication,M.presentation,M.dosage,M.pxHT,M.pxEchantillon,M.idFamille FROM medicament AS M order by M.id_produit;";
 			List<Produit> lesProduits = new List<Produit>();
 			Dictionary<Produit,Produit> lesInteractions = new Dictionary<Produit, Produit>();
 
@@ -20,7 +20,7 @@ namespace GSB_TGT
 			{
 				SqlDataReader dr;
 				DAOFactory db = new DAOFactory();
-				db.connect();
+				db.connexion();
 				dr = db.execSQLread(Req);
 				while (dr.Read())
 				{

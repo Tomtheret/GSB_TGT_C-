@@ -17,9 +17,9 @@ namespace GSB_TGT
         private string cp;
         private string ville;
         private string dateEmbauche;
-        private Secteur secteurVisiteur;
+        //private Secteur secteurVisiteur;
 
-        public Visiteur(int idVisiteur, string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur, Secteur secteurVisiteur)
+        public Visiteur(int idVisiteur, string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur)
         {
             this.id = idVisiteur;
             this.nom = nomVisiteur;
@@ -28,7 +28,7 @@ namespace GSB_TGT
             this.cp = cpVisiteur;
             this.ville = villeVisiteur;
             this.dateEmbauche = dateEmbaucheVisiteur;
-            this.secteurVisiteur = secteurVisiteur;
+            //this.secteurVisiteur = secteurVisiteur;
         }
 
     }

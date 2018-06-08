@@ -18,10 +18,33 @@ namespace GSB_TGT
 			nomFamille = nom;
 		}
 
-		public int IdFamille { get => idFamille; set => idFamille = value; }
-		public string NomFamille { get => nomFamille; set => nomFamille = value; }
+        public int IdFamille
+        {
+            get
+            {
+                return idFamille;
+            }
 
-		public static FamilleMedoc getFamilleById(int id)
+            set
+            {
+                idFamille = value;
+            }
+        }
+
+        public string NomFamille
+        {
+            get
+            {
+                return nomFamille;
+            }
+
+            set
+            {
+                nomFamille = value;
+            }
+        }
+
+        public static FamilleMedoc getFamilleById(int id)
 		{
 			List<FamilleMedoc> lesFamilles = DAOFamilleMedoc.listeFamilles();
 			int i = 0;

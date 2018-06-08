@@ -18,7 +18,7 @@ namespace GSB_TGT
 				String req = "select * FROM famille;";
 				SqlDataReader dr;
 				DAOFactory db = new DAOFactory();
-				db.connect();
+				db.connexion();
 				dr = db.execSQLread(req);
 				while (dr.Read())
 				{

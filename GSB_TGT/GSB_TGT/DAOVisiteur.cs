@@ -17,7 +17,7 @@ namespace GSB_TGT
 
         public void creerVisiteur(Visiteur visiteur)
         {
-            try
+            /*try
             {
                 String req = "INSERT INTO Visiteur (nom, prenom, adresse, cp, ville, dateEmbauche, idSecteur)  Values ('" + visiteur + "', '" + visiteur.prenomVisiteur
                     + "','" + visiteur.adresse + "','" + visiteur.cp + "','" + visiteur.ville  + "','" + visiteur.dateEmbauche + "', '" + visiteur.SecteurVisiteur.NumSecteur + "')";
@@ -29,6 +29,7 @@ namespace GSB_TGT
             catch (Exception ex)
             {
                 MessageBox.Show("ERREUR : " + ex);
-            }
+            }*/
         }
+    }
 }

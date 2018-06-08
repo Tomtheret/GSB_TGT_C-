@@ -12,38 +12,147 @@ namespace GSB_TGT
 		public static List<Produit> lesProduits = new List<Produit>();
 		
 		private int id_produit;
-		private string Nom_commercial;
-		private string Effet_therapeutique;
-		private string Contre_indication;
-		private string Presentation;
-		private string Dosage;
+		private string nom_commercial;
+		private string effet_therapeutique;
+		private string contre_indication;
+		private string presentation;
+		private string dosage;
 		private float pxHT;
 		private float pxEchantillon;
-		private int Num_famille;
+		private int idFamille;
 
-		public Produit(int unid_produit, string unNom_commercial, string unEffet_therapeutique, string uneContre_indication,
-			string unePresentation, string unDosage, float unpxHT, float unpxEchantillon, int unNum_famille)
+        public int d_produit
+        {
+            get
+            {
+                return id_produit;
+            }
+
+            set
+            {
+                id_produit = value;
+            }
+        }
+
+        public string Nom_commercial
+        {
+            get
+            {
+                return nom_commercial;
+            }
+
+            set
+            {
+                nom_commercial = value;
+            }
+        }
+
+        public string Effet_therapeutique
+        {
+            get
+            {
+                return effet_therapeutique;
+            }
+
+            set
+            {
+                effet_therapeutique = value;
+            }
+        }
+
+        public string Contre_indication
+        {
+            get
+            {
+                return contre_indication;
+            }
+
+            set
+            {
+                contre_indication = value;
+            }
+        }
+
+        public string Presentation
+        {
+            get
+            {
+                return presentation;
+            }
+
+            set
+            {
+                presentation = value;
+            }
+        }
+
+        public string Dosage
+        {
+            get
+            {
+                return dosage;
+            }
+
+            set
+            {
+                dosage = value;
+            }
+        }
+
+        public float PxHT
+        {
+            get
+            {
+                return pxHT;
+            }
+
+            set
+            {
+                pxHT = value;
+            }
+        }
+
+        public float PxEchantillon
+        {
+            get
+            {
+                return pxEchantillon;
+            }
+
+            set
+            {
+                pxEchantillon = value;
+            }
+        }
+
+        public int IdFamille
+        {
+            get
+            {
+                return idFamille;
+            }
+
+            set
+            {
+                idFamille = value;
+            }
+        }
+
+        public Produit(int unid_produit, string unNom_commercial, string unEffet_therapeutique, string uneContre_indication,
+			string unePresentation, string unDosage, float unpxHT, float unpxEchantillon, int unId_famille)
 		{
-			Id_produit = unid_produit;
-			Nom_commercial1 = unNom_commercial;
-			Effet_therapeutique1 = unEffet_therapeutique;
-			Contre_indication = uneContre_indication;
-			Presentation = unePresentation;
-			Dosage = unDosage;
+			id_produit = unid_produit;
+			nom_commercial = unNom_commercial;
+			effet_therapeutique = unEffet_therapeutique;
+			contre_indication = uneContre_indication;
+			presentation = unePresentation;
+			dosage = unDosage;
 			pxHT = unpxHT;
-			PxEchantillon = unpxEchantillon;
-			Num_famille = unNum_famille;
+			pxEchantillon = unpxEchantillon;
+			idFamille = unId_famille;
 		}
 
-		public int Id_produit { get => id_produit; set => id_produit = value; }
-		public string Nom_commercial1 { get => Nom_commercial; set => Nom_commercial = value; }
-		public string Effet_therapeutique1 { get => Effet_therapeutique; set => Effet_therapeutique = value; }
-		public string Contre_indication1 { get => Contre_indication; set => Contre_indication = value; }
-		public string Presentation1 { get => Presentation; set => Presentation = value; }
-		public string Dosage1 { get => Dosage; set => Dosage = value; }
-		public float PxHT { get => pxHT; set => pxHT = value; }
-		public float PxEchantillon { get => pxEchantillon; set => pxEchantillon = value; }
-		public int Num_famille1 { get => Num_famille; set => Num_famille = value; }
+		
 
 
 
@@ -54,11 +163,13 @@ namespace GSB_TGT
 			{
 				if (lesProduits.ElementAt(i).id_produit == id)
 				{
-					Cible = lesProduits.ElementAt(i);
+					return lesProduits.ElementAt(i);
 				}
 				i++;
 			}
-		}
+            MessageBox.Show("Produit non répertorié");
+            return null;
+        }
 	}
 
 }
