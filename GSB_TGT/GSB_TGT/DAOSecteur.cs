@@ -18,7 +18,7 @@ namespace GSB_TGT
                 String req = "Select * from SecteurVisiteur";
                 SqlDataReader rs;
                 DAOFactory db = new DAOFactory();
-                db.connexion();
+                db.connect();
                 rs = db.execSQLread(req);
                 while (rs.Read())
                 {
@@ -30,6 +30,6 @@ namespace GSB_TGT
                 MessageBox.Show("ERROR : " + e);
             }
             return Localisation;
-        }
+        }d
     }
 }
