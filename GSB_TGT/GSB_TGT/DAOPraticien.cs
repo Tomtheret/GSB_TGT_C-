@@ -34,5 +34,78 @@ namespace GSB_TGT
             }
             return lesPraticiens;
         }
+
+
+        public void addPraticien(Praticien praticien)
+        {
+            try
+            {
+                String req = "INSERT INTO praticien (Contact, Telephone, Raison_sociale, Adresse, Coef_notoriete, coef_confiance, idSpecialite) VALUES(" + praticien.Code + "," + praticien.Telephone + "," + praticien.Raison_sociale + "," + praticien.Adresse + "," + praticien.Coef_notoriete + "," + praticien.Coef_confiance + "," + praticien.IdSpecialite +");";
+                SqlDataReader rs;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                rs = db.execSQLread(req);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : " + ex);
+            }
+        }
+
+        public static void updtPraticien(Praticien praticien)
+        {
+            try
+            {
+                String req = "UPDATE praticien SET Raison_sociale = " + praticien.Raison_sociale + ", Adresse = " + praticien.Adresse + ", Telephone = " + praticien.Telephone + ", Contact = '$Contact', Coef_notoriete = " + praticien.Coef_notoriete + ", Coef_confiance = " + praticien.Coef_confiance + ", idSpecialite = " + praticien.IdSpecialite + " WHERE Code = " + praticien.Code + ";";
+                SqlDataReader rs;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                rs = db.execSQLread(req);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : " + ex);
+            }
+
+        }
+
+        public static void delPraticien(Praticien praticien)
+        {
+            try
+            {
+                String req = "Delete FROM Praticien WHERE code =" + praticien.Code;
+                SqlDataReader rs;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                rs = db.execSQLread(req);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : " + ex);
+            }
+        }
+
+        public static List<Specialite> getSpecialitePraticien()
+        {
+            List<Specialite> Specialite = new List<Specialite>();
+            try
+            {
+                String req = "Select * from Specialite";
+                SqlDataReader rs;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                rs = db.execSQLread(req);
+                while (rs.Read())
+                {
+                    Specialite.Add(new Specialite(Convert.ToInt32(rs[0].ToString()), rs[1].ToString()));
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERROR : " + e);
+            }
+            return Specialite;
+        }
     }
+}
 }
