@@ -10,6 +10,8 @@ namespace GSB_TGT
 {
     class DAOPraticien
     {
+        private static int res;
+
         public static List<Praticien> listePraticien()
         {
             string Req = "select Code, Raison_sociale, Adresse, Telephone, Contact, Coef_notoriete, coef_confiance, praticien.idSpecialite, nomSpecialite FROM praticien INNER JOIN specialite on praticien.idSpecialite = specialite.idSpecialite ;";
@@ -38,11 +40,11 @@ namespace GSB_TGT
         }
 
 
-        public void addPraticien(Praticien praticien)
+        public static void addPraticien(Praticien praticien)
         {
             try
             {
-                String req = "INSERT INTO praticien (Contact, Telephone, Raison_sociale, Adresse, Coef_notoriete, coef_confiance, idSpecialite) VALUES(" + praticien.Code + "," + praticien.Telephone + "," + praticien.Raison_sociale + "," + praticien.Adresse + "," + praticien.Coef_notoriete + "," + praticien.Coef_confiance + "," + praticien.Spec.NumSpecialite +");";
+                String req = "INSERT INTO praticien (Contact, Telephone, Raison_sociale, Adresse, Coef_notoriete, coef_confiance, idSpecialite) VALUES(" + praticien.Contact + "," + praticien.Telephone + "," + praticien.Raison_sociale + "," + praticien.Adresse + "," + praticien.Coef_notoriete + "," + praticien.Coef_confiance + "," + praticien.IdSpecialite +");";
                 SqlDataReader rs;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
@@ -87,26 +89,22 @@ namespace GSB_TGT
             }
         }
 
-        public static List<Specialite> getSpecialitePraticien()
+        public static int getIdSpecialitePraticien(Specialite nomSpecialite)
         {
-            List<Specialite> Specialite = new List<Specialite>();
             try
             {
-                String req = "Select * from Specialite";
+                String req = "Select idSpecialite from Praticien WHERE idSpecialite = ( Select idSpecialite from Specialite WHERE nomSpecialite=" +nomSpecialite+ ";";
                 SqlDataReader rs;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 rs = db.execSQLread(req);
-                while (rs.Read())
-                {
-                    Specialite.Add(new Specialite(Convert.ToInt32(rs[0].ToString()), rs[1].ToString()));
-                }
+                res = rs.GetInt32(0);
             }
             catch (Exception e)
             {
                 MessageBox.Show("ERROR : " + e);
             }
-            return Specialite;
+            return res;
         }
     }
 }
