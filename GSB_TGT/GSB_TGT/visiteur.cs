@@ -17,18 +17,171 @@ namespace GSB_TGT
         private string cp;
         private string ville;
         private string dateEmbauche;
-        //private Secteur secteurVisiteur;
+        private Secteur secteurVisiteur;
 
         public Visiteur(int idVisiteur, string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur)
         {
-            this.id = idVisiteur;
-            this.nom = nomVisiteur;
-            this.prenom = prenomVisiteur;
-            this.adresse = adresse;
-            this.cp = cpVisiteur;
-            this.ville = villeVisiteur;
-            this.dateEmbauche = dateEmbaucheVisiteur;
-            //this.secteurVisiteur = secteurVisiteur;
+            this.Id = idVisiteur;
+            this.Nom = nomVisiteur;
+            this.Prenom = prenomVisiteur;
+            this.Adresse = adresse;
+            this.Cp = cpVisiteur;
+            this.Ville = villeVisiteur;
+            this.DateEmbauche = dateEmbaucheVisiteur;
+            this.SecteurVisiteur = secteurVisiteur;
+        }
+        #region acceseurs 
+
+        public string Nom
+        {
+            get
+            {
+                return Nom;
+            }
+
+            set
+            {
+                nom = value;
+            }
+        }
+
+        public string Prenom
+        {
+            get
+            {
+                return Prenom;
+            }
+
+            set
+            {
+                Prenom = value;
+            }
+        }
+
+        public string Adresse
+        {
+            get
+            {
+                return Adresse;
+            }
+
+            set
+            {
+                Adresse = value;
+            }
+        }
+
+        public string Cp
+        {
+            get
+            {
+                return Cp;
+            }
+
+            set
+            {
+                Cp = value;
+            }
+        }
+
+        public string Ville
+        {
+            get
+            {
+                return Ville;
+            }
+
+            set
+            {
+                Ville = value;
+            }
+        }
+
+        public string DateEmbauche
+        {
+            get
+            {
+                return DateEmbauche;
+            }
+
+            set
+            {
+                DateEmbauche = value;
+            }
+        }
+
+        public Secteur SecteurVisiteur
+        {
+            get
+            {
+                return secteurVisiteur;
+            }
+
+            set
+            {
+                secteurVisiteur = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return Id;
+            }
+
+            set
+            {
+                Id = value;
+            }
+        }
+
+        #endregion
+
+        public static Visiteur getVisiteurByNom(string nom)
+        {
+            List<Visiteur> lesVisiteurs = DAOVisiteur.Visiteurs();
+            int i = 0;
+            bool found = false;
+            while (!found && i < lesVisiteurs.Count)
+            {
+                found = (lesVisiteurs.ElementAt(i).nom == nom);
+                if (!found)
+                {
+                    i++;
+                }
+            }
+            if (found)
+            {
+                return lesVisiteurs.ElementAt(i);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static Visiteur getVisiteurByNum(int id)
+        {
+            List<Visiteur> lesVisiteurs = DAOVisiteur.Visiteurs();
+            int i = 0;
+            bool found = false;
+            while (!found && i < lesVisiteurs.Count)
+            {
+                found = (lesVisiteurs.ElementAt(i).Id == id);
+                if (!found)
+                {
+                    i++;
+                }
+            }
+            if (found)
+            {
+                return lesVisiteurs.ElementAt(i);
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }

@@ -34,7 +34,6 @@ namespace GSB_TGT
                 {
                     FrmGSB frm = new FrmGSB();
                     frm.Show();
-
                 }
                 else
                 {

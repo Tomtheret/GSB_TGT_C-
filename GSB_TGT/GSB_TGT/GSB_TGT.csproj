@@ -75,6 +75,7 @@
     <Compile Include="DAOFamilleMedoc.cs" />
     <Compile Include="DAOPraticien.cs" />
     <Compile Include="DAOProduit.cs" />
+    <Compile Include="DAOSecteur.cs" />
     <Compile Include="DAOVisiteur.cs" />
     <Compile Include="FamilleMedoc.cs" />
     <Compile Include="FrmGSB.cs">
@@ -90,6 +91,7 @@
     <Compile Include="Produit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secteur.cs" />
     <Compile Include="Visiteur.cs" />
     <EmbeddedResource Include="connexion.resx">
       <DependentUpon>connexion.cs</DependentUpon>
