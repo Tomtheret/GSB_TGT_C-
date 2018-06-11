@@ -130,6 +130,13 @@
             this.ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEmbauche = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raisonSoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefNot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -662,6 +669,14 @@
             // 
             this.dgvPraticiens.BackgroundColor = System.Drawing.Color.White;
             this.dgvPraticiens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPraticiens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.contact,
+            this.raisonSoc,
+            this.adressePra,
+            this.telephone,
+            this.coefNot,
+            this.coefConf,
+            this.specialite});
             this.dgvPraticiens.Location = new System.Drawing.Point(6, 21);
             this.dgvPraticiens.Name = "dgvPraticiens";
             this.dgvPraticiens.Size = new System.Drawing.Size(641, 264);
@@ -1128,6 +1143,41 @@
             this.secteur.HeaderText = "Secteur";
             this.secteur.Name = "secteur";
             // 
+            // contact
+            // 
+            this.contact.HeaderText = "Contact";
+            this.contact.Name = "contact";
+            // 
+            // raisonSoc
+            // 
+            this.raisonSoc.HeaderText = "Raison Sociale";
+            this.raisonSoc.Name = "raisonSoc";
+            // 
+            // adressePra
+            // 
+            this.adressePra.HeaderText = "Adresse";
+            this.adressePra.Name = "adressePra";
+            // 
+            // telephone
+            // 
+            this.telephone.HeaderText = "Téléphone";
+            this.telephone.Name = "telephone";
+            // 
+            // coefNot
+            // 
+            this.coefNot.HeaderText = "Coefficient Notoriété";
+            this.coefNot.Name = "coefNot";
+            // 
+            // coefConf
+            // 
+            this.coefConf.HeaderText = "Coefficient Confiance";
+            this.coefConf.Name = "coefConf";
+            // 
+            // specialite
+            // 
+            this.specialite.HeaderText = "Spécialité";
+            this.specialite.Name = "specialite";
+            // 
             // FrmGSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1273,6 +1323,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ville;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmbauche;
         private System.Windows.Forms.DataGridViewTextBoxColumn secteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn raisonSoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adressePra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coefNot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coefConf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specialite;
     }
 }
 

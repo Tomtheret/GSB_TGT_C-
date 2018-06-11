@@ -18,7 +18,7 @@ namespace GSB_TGT
         private string contact;
         private float coef_notoriete;
         private float coef_confiance;
-        private int idSpecialite;
+        private Specialite spec;
 
         public string Raison_sociale
         {
@@ -111,20 +111,20 @@ namespace GSB_TGT
             }
         }
 
-        public int IdSpecialite
+        public Specialite Spec
         {
             get
             {
-                return idSpecialite;
+                return spec;
             }
 
             set
             {
-                idSpecialite = value;
+                spec = value;
             }
         }
 
-        public Praticien(int UnCode, string UneRaison_sociale, string UneAdresse,string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, int UnIdSpecialite)
+        public Praticien(int UnCode, string UneRaison_sociale, string UneAdresse,string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, Specialite specPra)
         {
         code = UnCode;
         raison_sociale = UneRaison_sociale;
@@ -133,7 +133,7 @@ namespace GSB_TGT
         contact = UnContact;
         coef_notoriete = UnCoef_notoriete;
         coef_confiance = UnCoef_confiance;
-        idSpecialite = UnIdSpecialite;
+        spec = specPra;
         }
 
 

@@ -69,9 +69,15 @@ namespace GSB_TGT
         private void actualiserPraticien()
         {
             listPraticiens = DAOPraticien.listePraticien();
-            dgvPraticiens.DataSource = null;
-            dgvPraticiens.DataSource = listPraticiens;
+            /*dgvPraticiens.DataSource = null;
+            dgvPraticiens.DataSource = listPraticiens;*/
 
+            for (int i = 0; i < listPraticiens.Count; i++)
+            {
+                Praticien p = listPraticiens.ElementAt(i);
+                Specialite s = p.Spec;
+                dgvPraticiens.Rows.Add(p.Contact, p.Raison_sociale, p.Adresse, p.Telephone, p.Coef_notoriete, p.Coef_confiance,  s.NomSpecialite);
+            }
         }
         #endregion
 
