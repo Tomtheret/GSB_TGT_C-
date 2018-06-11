@@ -18,6 +18,7 @@ namespace GSB_TGT
         private string contact;
         private float coef_notoriete;
         private float coef_confiance;
+        private int idSpecialite;
         private Specialite spec;
 
         public string Raison_sociale
@@ -124,6 +125,19 @@ namespace GSB_TGT
             }
         }
 
+        public int IdSpecialite
+        {
+            get
+            {
+                return idSpecialite;
+            }
+
+            set
+            {
+                idSpecialite = value;
+            }
+        }
+
         public Praticien(int UnCode, string UneRaison_sociale, string UneAdresse,string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, Specialite specPra)
         {
         code = UnCode;
@@ -136,6 +150,16 @@ namespace GSB_TGT
         spec = specPra;
         }
 
+        public Praticien(string UneRaison_sociale, string UneAdresse, string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, int UnIdSpecialite)
+        {
+            raison_sociale = UneRaison_sociale;
+            adresse = UneAdresse;
+            telephone = UnTelephone;
+            contact = UnContact;
+            coef_notoriete = UnCoef_notoriete;
+            coef_confiance = UnCoef_confiance;
+            IdSpecialite = UnIdSpecialite;
+        }
 
         public static Praticien getPraticienwithCode(int code)
         {

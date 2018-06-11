@@ -256,6 +256,11 @@ namespace GSB_TGT
 
         }
         #endregion
-
+        private void btnPraAjouter_Click(object sender, EventArgs e)
+        {
+            Praticien p = new Praticien(txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, float.Parse(txbPraCoeffNot.Text), float.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+            DAOPraticien.addPraticien(p);
+            actualiserPraticien();
+        }
     }
 }
