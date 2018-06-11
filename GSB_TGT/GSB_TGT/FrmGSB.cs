@@ -92,6 +92,7 @@ namespace GSB_TGT
             /*string requete = "insert into medicament values(" + txbProNum.Text + "," + txbProNom.Text + ","+ txbProEffet.Text +","
                 + txbProContreInd.Text + ","+ txbProPresentation.Text+","+ txbProDosage.Text + "," + txbProPrix.Text + "," +txbProPrixEchantillon.Text +"," + cbxProFamille.Text +"); ";*/
             DAOProduit.setProduit(p);
+            actualiserProduit();
         }
 
         private void txbProPrixEchantillon_TextChanged(object sender, EventArgs e)
@@ -127,13 +128,17 @@ namespace GSB_TGT
 		{
 			Produit p = new Produit(Int32.Parse(txbProNum.Text), txbProNom.Text, txbProEffet.Text, txbProContreInd.Text, txbProPresentation.Text, txbProDosage.Text, float.Parse(txbProPrix.Text), float.Parse(txbProPrixEchantillon.Text), DAOFamilleMedoc.getIdFamilleFromNomFamille(cbxProFamille.Text));
 			DAOProduit.updateProduit(p);
-		}
+            actualiserProduit();
+
+        }
 
 		private void btnProSupprimer_Click(object sender, EventArgs e)
 		{
 			Produit p = new Produit(Int32.Parse(txbProNum.Text), txbProNom.Text, txbProEffet.Text, txbProContreInd.Text, txbProPresentation.Text, txbProDosage.Text, float.Parse(txbProPrix.Text), float.Parse(txbProPrixEchantillon.Text), DAOFamilleMedoc.getIdFamilleFromNomFamille(cbxProFamille.Text));
 			DAOProduit.supprProduit(p);
-		}
+            actualiserProduit();
+
+        }
 
         private void btnProAssocier_Click(object sender, EventArgs e)
         {
