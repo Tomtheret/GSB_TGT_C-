@@ -56,7 +56,8 @@ namespace GSB_TGT
 			foreach (FamilleMedoc listfamill in listfamille)
 			{
 				cbxProFamille.Items.Add(listfamill.NomFamille);
-			}            
+			}
+            actualiserVisiteur();         
 		}
 
         #region Praticiens

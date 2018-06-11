@@ -22,14 +22,14 @@ namespace GSB_TGT
             List<Secteur> Localisation = new List<Secteur>();
             try
             {
-                String req = "Select * from SecteurVisiteur";
-                SqlDataReader rs;
+                String req = "Select * from secteur";
+                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
-                while (rs.Read())
+                dr = db.execSQLread(req);
+                while (dr.Read())
                 {
-                    Localisation.Add(new Secteur(Convert.ToInt32(rs[0].ToString()), rs[1].ToString()));
+                    Localisation.Add(new Secteur(Convert.ToInt32(dr[0].ToString()), dr[1].ToString()));
                 }
             }
             catch (Exception e)
@@ -43,16 +43,16 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "Select id, nom, prenom, adresse, cp, ville, dateEmbauche, nomSecteur From Visiteur INNER JOIN Secteur ON Visiteur.idSecteur = Secteur.idSecteur";
-                SqlDataReader rs;
+                String req = "Select id, nom, prenom, adresse, cp, ville, dateEmbauche, visiteur_medical.idSecteur, nomSecteur From visiteur_medical INNER JOIN secteur ON visiteur_medical.idSecteur = secteur.idSecteur";
+                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
+                dr = db.execSQLread(req);
                 Visiteur vis = null;
-                while (rs.Read())
+                while (dr.Read())
                 {
-                    Secteur secteur = new Secteur(Int32.Parse(rs[7].ToString()), rs[8].ToString());
-                    vis = new Visiteur(Int32.Parse(rs[0].ToString()), rs[1].ToString(), rs[2].ToString(), rs[3].ToString(), rs[4].ToString(), rs[5].ToString(), rs[6].ToString(), secteur);
+                    Secteur secteur = new Secteur(Int32.Parse(dr[7].ToString()), dr[8].ToString());
+                    vis = new Visiteur(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), secteur);
                     lesVisiteurs2.Add(vis);
                 }
             }
@@ -68,11 +68,11 @@ namespace GSB_TGT
             try
             {
                 String req = "INSERT INTO Visiteur (nom, prenom, adresse, cp, ville, dateEmbauche, idSecteur)  Values ('" + visiteur + "', '" + visiteur.Prenom
-                    + "','" + visiteur.Adresse + "','" + visiteur.Cp + "','" + visiteur.Ville + "','" + visiteur.DateEmbauche + "', '" + visiteur.SecteurVisiteur.NumSecteur + "')";
-                SqlDataReader rs;
+                    + "','" + visiteur.Adresse + "','" + visiteur.Cp + "','" + visiteur.Ville + "','" + visiteur.DateEmbauche + "', '" + visiteur.SecteurVisiteur.IdSecteur + "')";
+                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
+                dr = db.execSQLread(req);
             }
             catch (Exception ex)
             {
@@ -85,12 +85,12 @@ namespace GSB_TGT
             try
             {
                 String req = "UPDATE Visiteur SET nomVisiteur = '" + visiteur.Nom + "', prenomVisiteur = '" + visiteur.Prenom
-                    + "', adresse = '" + visiteur.Adresse + "', cpVisiteur = '" + visiteur.Cp + "', villeVisiteur = '" + visiteur.Ville + "', dateEmbauche = '" + visiteur.DateEmbauche + "', numSecteur = '" + (visiteur.SecteurVisiteur).NumSecteur + "'"
+                    + "', adresse = '" + visiteur.Adresse + "', cpVisiteur = '" + visiteur.Cp + "', villeVisiteur = '" + visiteur.Ville + "', dateEmbauche = '" + visiteur.DateEmbauche + "', numeSecteur = '" + (visiteur.SecteurVisiteur).IdSecteur + "'"
                     + " WHERE numVisiteur =" + visiteur.Id;
-                SqlDataReader rs;
+                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
+                dr = db.execSQLread(req);
             }
             catch (Exception ex)
             {
@@ -104,10 +104,10 @@ namespace GSB_TGT
             try
             {
                 String req = "Delete FROM Visiteur WHERE idVisiteur =" + visiteur.Id;
-                SqlDataReader rs;
+                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
+                dr = db.execSQLread(req);
             }
             catch (Exception ex)
             {
@@ -121,13 +121,13 @@ namespace GSB_TGT
             try
             {
                 String req = "Select * from SecteurVisiteur";
-                SqlDataReader rs;
+                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
-                while (rs.Read())
+                dr = db.execSQLread(req);
+                while (dr.Read())
                 {
-                    Localisation.Add(new Secteur(Convert.ToInt32(rs[0].ToString()), rs[1].ToString()));
+                    Localisation.Add(new Secteur(Convert.ToInt32(dr[0].ToString()), dr[1].ToString()));
                 }
             }
             catch (Exception e)

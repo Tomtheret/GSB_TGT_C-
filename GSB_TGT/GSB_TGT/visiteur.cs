@@ -37,7 +37,7 @@ namespace GSB_TGT
         {
             get
             {
-                return Nom;
+                return nom;
             }
 
             set
@@ -50,12 +50,12 @@ namespace GSB_TGT
         {
             get
             {
-                return Prenom;
+                return prenom;
             }
 
             set
             {
-                Prenom = value;
+                prenom = value;
             }
         }
 
@@ -63,12 +63,12 @@ namespace GSB_TGT
         {
             get
             {
-                return Adresse;
+                return adresse;
             }
 
             set
             {
-                Adresse = value;
+                adresse = value;
             }
         }
 
@@ -76,12 +76,12 @@ namespace GSB_TGT
         {
             get
             {
-                return Cp;
+                return cp;
             }
 
             set
             {
-                Cp = value;
+                cp = value;
             }
         }
 
@@ -89,12 +89,12 @@ namespace GSB_TGT
         {
             get
             {
-                return Ville;
+                return ville;
             }
 
             set
             {
-                Ville = value;
+                ville = value;
             }
         }
 
@@ -102,12 +102,12 @@ namespace GSB_TGT
         {
             get
             {
-                return DateEmbauche;
+                return dateEmbauche;
             }
 
             set
             {
-                DateEmbauche = value;
+                dateEmbauche = value;
             }
         }
 
@@ -128,14 +128,16 @@ namespace GSB_TGT
         {
             get
             {
-                return Id;
+                return id;
             }
 
             set
             {
-                Id = value;
+                id = value;
             }
         }
+
+
 
         #endregion
 

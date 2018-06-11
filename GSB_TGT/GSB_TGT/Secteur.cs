@@ -18,7 +18,7 @@ namespace GSB_TGT
         }
 
         #region accesseurs
-        public int NumSecteur
+        public int IdSecteur
         {
             get
             {
@@ -52,7 +52,7 @@ namespace GSB_TGT
             bool found = false;
             while (!found && i < lesSecteurs.Count)
             {
-                found = (lesSecteurs.ElementAt(i).NumSecteur == num);
+                found = (lesSecteurs.ElementAt(i).idSecteur == num);
                 if (!found)
                 {
                     i++;

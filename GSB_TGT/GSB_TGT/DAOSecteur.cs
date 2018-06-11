@@ -16,13 +16,13 @@ namespace GSB_TGT
             try
             {
                 String req = "Select * from SecteurVisiteur";
-                SqlDataReader rs;
+                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
-                while (rs.Read())
+                dr = db.execSQLread(req);
+                while (dr.Read())
                 {
-                    Localisation.Add(new Secteur(Convert.ToInt32(rs[0].ToString()), rs[1].ToString()));
+                    Localisation.Add(new Secteur(Convert.ToInt32(dr[0].ToString()), dr[1].ToString()));
                 }
             }
             catch (Exception e)
@@ -30,6 +30,30 @@ namespace GSB_TGT
                 MessageBox.Show("ERROR : " + e);
             }
             return Localisation;
+        }
+
+        public static int getNomSecteurFromIdSecteur(Secteur idSecteur)
+        {
+            int res = 0;
+            try
+            {
+
+                String req = "select nomSecteur from famille where idSecteur ='" + idSecteur + "'";
+                SqlDataReader dr;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                dr = db.execSQLread(req);
+                while (dr.Read())
+                {
+                    res = dr.GetInt32(0);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return res;
         }
     }
 }
