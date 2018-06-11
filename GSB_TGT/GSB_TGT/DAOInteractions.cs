@@ -15,7 +15,7 @@ namespace GSB_TGT
 			List<Interaction> lesInteractions = new List<Interaction>();
 			try
 			{
-				String req = "select * FROM interragir;";
+				String req = "select * FROM interaction;";
 				SqlDataReader dr;
 				DAOFactory db = new DAOFactory();
 				db.connexion();
@@ -38,7 +38,7 @@ namespace GSB_TGT
 		{
 			try
 			{
-				String req = "DELETE from interragir WHERE id_produit='"+interac1+"' AND id_produit_medicament='"+interac2+"'";
+				String req = "DELETE from interragir WHERE Id_produit='"+interac1+"' AND Id_produit_Medicament='"+interac2+"'";
 				DAOFactory db = new DAOFactory();
 				db.connexion();
 				db.execSQLwrite(req);
@@ -49,19 +49,5 @@ namespace GSB_TGT
 			}
 
 		}
-
-        public static void setInteraction(Interaction i)
-        {
-            try {
-                string req = "INSERT INTO interragir (id_produit, id_produit_medicament) VALUES('" + i.Interaction1 + "','" + i.Interaction2 + "')";
-                DAOFactory db = new DAOFactory();
-                db.connexion();
-                db.execSQLwrite(req);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        }
 	}
 }
