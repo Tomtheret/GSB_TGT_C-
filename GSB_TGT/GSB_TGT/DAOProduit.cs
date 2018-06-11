@@ -30,7 +30,7 @@ namespace GSB_TGT
                     //MessageBox.Show("passer " + i + " fois");
                     //i++;
                     //for (int k = 0; k < 9; k++)
-                      //  MessageBox.Show(dr.GetValue(k).ToString());
+                    //  MessageBox.Show(dr.GetValue(k).ToString());
 
                     /*NumberFormatInfo current1 = CultureInfo.CurrentCulture.NumberFormat;
                     current1.NumberDecimalSeparator = ",";*/
@@ -60,37 +60,35 @@ namespace GSB_TGT
 
         public static void setProduit(Produit p)
         {
-            string requete = "insert into medicament values(" + p.Id_produit + ",'" + p.Nom_commercial + "','" + p.Effet_therapeutique + "','"
-                + p.Contre_indication + "','" + p.Presentation + "','" + p.Dosage + "'," + p.PxHT + "," + p.PxEchantillon + "," + p.IdFamille + "); ";
-            
+            string requete = "insert into medicament values(" + p.Id_produit + ",'" + p.Nom_commercial + "','" + p.Effet_therapeutique + "','" + p.Contre_indication + "','" + p.Presentation + "','" + p.Dosage + "'," + p.PxHT + "," + p.PxEchantillon + "," + p.IdFamille + "); ";
+
             DAOFactory db = new DAOFactory();
             db.connexion();
             db.execSQLwrite(requete);
 
         }
-		public static void updateProduit(Produit p)
-		{
-			string req = "UPDATE medicament SET Nom_commercial = '"+ p.Nom_commercial + "', Effet_therapeutique = '" + p.Effet_therapeutique + "',Contre_indication = '"
-				+ p.Contre_indication + "', Presentation = '" + p.Presentation + "', Dosage = '" + p.Dosage + "', PxHT= '" + p.PxHT + "', pxEchantillon = '" + p.PxEchantillon + "'" +
-				", idFamille='" + p.IdFamille + "' WHERE Id_produit='" + p.Id_produit + "' ";
-			DAOFactory db = new DAOFactory();
-			db.connexion();
-			db.execSQLwrite(req);
+        public static void updateProduit(Produit p)
+        {
+            string req = "UPDATE medicament SET nom_commercial = '" + p.Nom_commercial + "', effet_therapeutique = '" + p.Effet_therapeutique + "',contre_indication = '" + p.Contre_indication + "', presentation = '" + p.Presentation + "', dosage = '" + p.Dosage + "', pxHT= '" + p.PxHT + "', pxEchantillon = '" + p.PxEchantillon + "'" + ", idFamille='" + p.IdFamille + "' WHERE id_produit='" + p.Id_produit + "' ";
+            DAOFactory db = new DAOFactory();
+            db.connexion();
+            db.execSQLwrite(req);
 
-		}
+        }
 
 
 
-		public static void supprProduit(Produit p)
-		{
-			string req1 = "DELETE from interragir WHERE Id_produit='" + p.Id_produit + "' OR Id_produit_Medicament='" + p.Id_produit + "'";
-			string req2 = "DELETE from medicament WHERE Id_produit='" + p.Id_produit + "'";
-			DAOFactory db = new DAOFactory();
-			db.connexion();
-			db.execSQLwrite(req1);
-			db.execSQLwrite(req2);
-		}
+        public static void supprProduit(Produit p)
+        {
+            string req1 = "DELETE from interragir WHERE Id_produit='" + p.Id_produit + "' OR Id_produit_Medicament='" + p.Id_produit + "'";
+            string req2 = "DELETE from medicament WHERE Id_produit='" + p.Id_produit + "'";
+            DAOFactory db = new DAOFactory();
+            db.connexion();
+            db.execSQLwrite(req1);
+            db.execSQLwrite(req2);
+        }
 
 
-	}
+    }
 }
+

@@ -7,19 +7,19 @@ using System.Windows.Forms;
 
 namespace GSB_TGT
 {
-	class Produit
-	{
-		public static List<Produit> lesProduits = new List<Produit>();
-		
-		private int id_produit;
-		private string nom_commercial;
-		private string effet_therapeutique;
-		private string contre_indication;
-		private string presentation;
-		private string dosage;
-		private float pxHT;
-		private float pxEchantillon;
-		private int idFamille;
+    class Produit
+    {
+        public static List<Produit> lesProduits = new List<Produit>();
+
+        private int id_produit;
+        private string nom_commercial;
+        private string effet_therapeutique;
+        private string contre_indication;
+        private string presentation;
+        private string dosage;
+        private float pxHT;
+        private float pxEchantillon;
+        private int idFamille;
 
         public int Id_produit
         {
@@ -139,42 +139,42 @@ namespace GSB_TGT
         }
 
         public Produit(int unid_produit, string unNom_commercial, string unEffet_therapeutique, string uneContre_indication,
-			string unePresentation, string unDosage, float unpxHT, float unpxEchantillon, int unId_famille)
-		{
-			id_produit = unid_produit;
-			nom_commercial = unNom_commercial;
-			effet_therapeutique = unEffet_therapeutique;
-			contre_indication = uneContre_indication;
-			presentation = unePresentation;
-			dosage = unDosage;
-			pxHT = unpxHT;
-			pxEchantillon = unpxEchantillon;
-			idFamille = unId_famille;
-		}
-
-		
+            string unePresentation, string unDosage, float unpxHT, float unpxEchantillon, int unId_famille)
+        {
+            id_produit = unid_produit;
+            nom_commercial = unNom_commercial;
+            effet_therapeutique = unEffet_therapeutique;
+            contre_indication = uneContre_indication;
+            presentation = unePresentation;
+            dosage = unDosage;
+            pxHT = unpxHT;
+            pxEchantillon = unpxEchantillon;
+            idFamille = unId_famille;
+        }
 
 
 
-		public static Produit getProduitwithID(int id)
-		{
-			int i = 0;
-			while (i< lesProduits.Count)
-			{
-				if (lesProduits.ElementAt(i).id_produit == id)
-				{
-					return lesProduits.ElementAt(i);
-				}
-				i++;
-			}
+
+
+        public static Produit getProduitwithID(int id)
+        {
+            int i = 0;
+            while (i < lesProduits.Count)
+            {
+                if (lesProduits.ElementAt(i).id_produit == id)
+                {
+                    return lesProduits.ElementAt(i);
+                }
+                i++;
+            }
             MessageBox.Show("Produit non répertorié");
             return null;
         }
 
-        public static void setProduit (Produit p)
+        public static void setProduit(Produit p)
         {
 
         }
-	}
+    }
 
 }

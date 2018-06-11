@@ -43,10 +43,10 @@ namespace GSB_TGT
 
 		}
 
-		private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		private void dgvInteraction_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int rowIndex = e.RowIndex;
-			DataGridViewRow row = dataGridView1.Rows[rowIndex];
+			DataGridViewRow row = dgvInteraction.Rows[rowIndex];
 			DAOInteractions.supprInteraction(Int32.Parse(row.Cells[0].Value.ToString()), Int32.Parse(row.Cells[0].Value.ToString()));
 		}
 
