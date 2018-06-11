@@ -17,6 +17,7 @@ namespace GSB_TGT
         private List<FamilleMedoc> listfamille;
 		private List<Interaction> listInteraction;
         private List<Visiteur> listVisiteur;
+        private List<Praticien> listPraticiens;
         public FrmGSB()
         {
             InitializeComponent();
@@ -57,11 +58,21 @@ namespace GSB_TGT
 			{
 				cbxProFamille.Items.Add(listfamill.NomFamille);
 			}
-            actualiserVisiteur();         
-		}
+            // Visiteurs
+            actualiserVisiteur();
+
+            //Praticiens  
+            actualiserPraticien();
+        }
 
         #region Praticiens
+        private void actualiserPraticien()
+        {
+            listPraticiens = DAOPraticien.listePraticien();
+            dgvPraticiens.DataSource = null;
+            dgvPraticiens.DataSource = listPraticiens;
 
+        }
         #endregion
 
         #region Visiteurs
