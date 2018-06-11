@@ -12,7 +12,7 @@ namespace GSB_TGT
     {
         public static List<Praticien> listePraticien()
         {
-            string Req = "select P.Code, P.Raison_sociale, P.Adresse, P.Telephone, P.Contact, P.Coef_notoriete, P.coef_confiance, S.nomSpecialite FROM praticien AS P INNER JOIN specialite AS S on S.idSpecialite=P.idSpecialite;";
+            string Req = "select Code, Raison_sociale, Adresse, Telephone, Contact, Coef_notoriete, coef_confiance, idSpecialite FROM praticien ;";
             List<Praticien> lesPraticiens = new List<Praticien>();
 
             try
@@ -23,8 +23,8 @@ namespace GSB_TGT
                 dr = db.execSQLread(Req);
                 while (dr.Read())
                 {
-                    Praticien pr = new Praticien(dr.GetInt32(0), dr.GetValue(1).ToString(), dr.GetValue(2).ToString(), dr.GetValue(3).ToString(), dr.GetValue(4).ToString(), dr.GetFloat(5), dr.GetFloat(6), dr.GetInt32(7));
-                    lesPraticiens.Add(pr);
+                    Praticien pra = new Praticien(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), float.Parse(dr[5].ToString()), float.Parse(dr[6].ToString()), Int32.Parse(dr[7].ToString()));
+                    lesPraticiens.Add(pra);
                 }
 
             }

@@ -78,15 +78,7 @@
             this.btnPraAnnuler = new System.Windows.Forms.Button();
             this.btnPraSupprimer = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dgvPraticients = new System.Windows.Forms.DataGridView();
-            this.praCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.praTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.praContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.praRaisonSoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.praAdresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.praSpecialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.praCoeffNot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.praCoeffConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPraticiens = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txbPraTelephone = new System.Windows.Forms.TextBox();
@@ -145,7 +137,7 @@
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPraticients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPraticiens)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tabVisiteur.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -651,7 +643,7 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.groupBox7.Controls.Add(this.dgvPraticients);
+            this.groupBox7.Controls.Add(this.dgvPraticiens);
             this.groupBox7.Location = new System.Drawing.Point(3, 178);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(658, 291);
@@ -659,79 +651,14 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Liste des Praticiens";
             // 
-            // dgvPraticients
+            // dgvPraticiens
             // 
-            this.dgvPraticients.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPraticients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPraticients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.praCode,
-            this.praTelephone,
-            this.praContact,
-            this.praRaisonSoc,
-            this.praAdresse,
-            this.praSpecialite,
-            this.praCoeffNot,
-            this.praCoeffConf});
-            this.dgvPraticients.Location = new System.Drawing.Point(6, 21);
-            this.dgvPraticients.Name = "dgvPraticients";
-            this.dgvPraticients.Size = new System.Drawing.Size(641, 264);
-            this.dgvPraticients.TabIndex = 0;
-            // 
-            // praCode
-            // 
-            this.praCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.praCode.HeaderText = "Code";
-            this.praCode.Name = "praCode";
-            this.praCode.Width = 57;
-            // 
-            // praTelephone
-            // 
-            this.praTelephone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.praTelephone.HeaderText = "Téléphone";
-            this.praTelephone.Name = "praTelephone";
-            this.praTelephone.Width = 83;
-            // 
-            // praContact
-            // 
-            this.praContact.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.praContact.HeaderText = "Contact";
-            this.praContact.Name = "praContact";
-            this.praContact.Width = 69;
-            // 
-            // praRaisonSoc
-            // 
-            this.praRaisonSoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.praRaisonSoc.HeaderText = "Raison social";
-            this.praRaisonSoc.Name = "praRaisonSoc";
-            this.praRaisonSoc.Width = 87;
-            // 
-            // praAdresse
-            // 
-            this.praAdresse.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.praAdresse.HeaderText = "Adresse";
-            this.praAdresse.Name = "praAdresse";
-            this.praAdresse.Width = 70;
-            // 
-            // praSpecialite
-            // 
-            this.praSpecialite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.praSpecialite.HeaderText = "Spécialité";
-            this.praSpecialite.Name = "praSpecialite";
-            this.praSpecialite.Width = 78;
-            // 
-            // praCoeffNot
-            // 
-            this.praCoeffNot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.praCoeffNot.HeaderText = "Coeff de Notoriété";
-            this.praCoeffNot.Name = "praCoeffNot";
-            this.praCoeffNot.Width = 108;
-            // 
-            // praCoeffConf
-            // 
-            this.praCoeffConf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.praCoeffConf.HeaderText = "Coeff de Confiance";
-            this.praCoeffConf.Name = "praCoeffConf";
-            this.praCoeffConf.Width = 113;
+            this.dgvPraticiens.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPraticiens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPraticiens.Location = new System.Drawing.Point(6, 21);
+            this.dgvPraticiens.Name = "dgvPraticiens";
+            this.dgvPraticiens.Size = new System.Drawing.Size(641, 264);
+            this.dgvPraticiens.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -1177,7 +1104,7 @@
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPraticients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPraticiens)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabVisiteur.ResumeLayout(false);
@@ -1248,7 +1175,7 @@
         private System.Windows.Forms.TextBox txbVisNom;
         private System.Windows.Forms.TextBox txbVisPrenom;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataGridView dgvPraticients;
+        private System.Windows.Forms.DataGridView dgvPraticiens;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.DataGridView dgvVisiteurs;
         private System.Windows.Forms.Label label22;
@@ -1272,14 +1199,6 @@
         private System.Windows.Forms.ComboBox cbxProAssociation2;
         private System.Windows.Forms.ComboBox cbxProAssociation1;
         private System.Windows.Forms.Button btnProAssocier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praTelephone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praContact;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praRaisonSoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praAdresse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praSpecialite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praCoeffNot;
-        private System.Windows.Forms.DataGridViewTextBoxColumn praCoeffConf;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txbProPrixEchantillon;
         private System.Windows.Forms.Label label25;
