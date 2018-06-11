@@ -43,31 +43,6 @@ namespace GSB_TGT
 
 		}
 
-		private void dgvInteraction_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-		{
-			int rowIndex = e.RowIndex;
-			DataGridViewRow row = dgvInteraction.Rows[rowIndex];
-			DAOInteractions.supprInteraction(Int32.Parse(row.Cells[0].Value.ToString()), Int32.Parse(row.Cells[0].Value.ToString()));
-		}
-
-			private void dgvMedicaments_SelectionChanged(object sender, EventArgs e)
-		{
-			foreach (DataGridViewRow row in dgvMedicaments.SelectedRows)
-			{
-				txbProNum.Text = row.Cells[0].Value.ToString();
-				txbProNom.Text = row.Cells[1].Value.ToString();
-				txbProEffet.Text = row.Cells[2].Value.ToString();
-				txbProContreInd.Text = row.Cells[3].Value.ToString();
-				txbProPresentation.Text = row.Cells[4].Value.ToString();
-				txbProDosage.Text = row.Cells[5].Value.ToString();
-				txbProPrix.Text = row.Cells[6].Value.ToString();
-				txbProPrixEchantillon.Text = row.Cells[7].Value.ToString();
-				cbxProFamille.Text = row.Cells[8].Value.ToString();
-
-
-			}
-		}
-
 		private void tabVisiteur_Click(object sender, EventArgs e)
         {
 
@@ -81,10 +56,43 @@ namespace GSB_TGT
 			foreach (FamilleMedoc listfamill in listfamille)
 			{
 				cbxProFamille.Items.Add(listfamill.NomFamille);
-			}
-
-		
+			}            
 		}
+
+        #region Praticiens
+
+        #endregion
+
+        #region Visiteurs
+
+
+        #endregion
+
+        #region Médicaments
+
+        private void dgvInteraction_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = dgvInteraction.Rows[rowIndex];
+            DAOInteractions.supprInteraction(Int32.Parse(row.Cells[0].Value.ToString()), Int32.Parse(row.Cells[0].Value.ToString()));
+        }
+        private void dgvMedicaments_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvMedicaments.SelectedRows)
+            {
+                txbProNum.Text = row.Cells[0].Value.ToString();
+                txbProNom.Text = row.Cells[1].Value.ToString();
+                txbProEffet.Text = row.Cells[2].Value.ToString();
+                txbProContreInd.Text = row.Cells[3].Value.ToString();
+                txbProPresentation.Text = row.Cells[4].Value.ToString();
+                txbProDosage.Text = row.Cells[5].Value.ToString();
+                txbProPrix.Text = row.Cells[6].Value.ToString();
+                txbProPrixEchantillon.Text = row.Cells[7].Value.ToString();
+                cbxProFamille.Text = row.Cells[8].Value.ToString();
+
+
+            }
+        }
 
         private void btnProAjouter_Click(object sender, EventArgs e)
         {
@@ -100,7 +108,8 @@ namespace GSB_TGT
 
         }
 
-		private void actualiserProduit()
+        
+        private void actualiserProduit()
 		{
 			listMedoc = DAOProduit.listeProduit();
 			dgvMedicaments.DataSource = null;
@@ -146,5 +155,6 @@ namespace GSB_TGT
             DAOInteractions.setInteraction(i);
             actualiserProduit();
         }
+        #endregion
     }
 }
