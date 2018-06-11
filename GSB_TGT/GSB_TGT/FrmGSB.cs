@@ -166,8 +166,8 @@ namespace GSB_TGT
 			dgvInteraction.DataSource = null;
 			dgvInteraction.DataSource = listInteraction;
 
-            cbxProAssociation1.DataSource = null;
-            cbxProAssociation2.DataSource = null;
+            cbxProAssociation1.Items.Clear();
+            cbxProAssociation2.Items.Clear();
             foreach (Produit unProduit in listMedoc)
             {
                 cbxProAssociation1.Items.Add(unProduit.Id_produit);
@@ -203,6 +203,32 @@ namespace GSB_TGT
             actualiserProduit();
         }
 
+        private void btnProAnnuler_Click(object sender, EventArgs e)
+        {
+            txbProNum.Text = "";
+            txbProNom.Text = "";
+            txbProEffet.Text = "";
+            txbProContreInd.Text = "";
+            txbProPresentation.Text = "";
+            txbProDosage.Text = "";
+            txbProPrix.Text = "";
+            txbProPrixEchantillon.Text = "";
+            cbxProFamille.Text = "";
+        }
+
+        private void btnProDissocier_Click(object sender, EventArgs e)
+        {
+            int inter1 = 0;
+            int inter2 = 0;
+
+            foreach (DataGridViewRow row in dgvInteraction.SelectedRows)
+            {
+                inter1 = Int32.Parse(row.Cells[0].Value.ToString());
+                inter2 = Int32.Parse(row.Cells[1].Value.ToString());
+            }
+            DAOInteractions.supprInteraction(inter1, inter2);
+            actualiserProduit();
+        }
         #endregion
 
         #region boutons
@@ -223,7 +249,7 @@ namespace GSB_TGT
                 txbProDosage.Text = row.Cells[5].Value.ToString();
                 txbProPrix.Text = row.Cells[6].Value.ToString();
                 txbProPrixEchantillon.Text = row.Cells[7].Value.ToString();
-                cbxProFamille.Text = row.Cells[8].Value.ToString();
+                cbxProFamille.Text = DAOFamilleMedoc.getNomFamilleFromIdFamille(Int32.Parse(row.Cells[8].Value.ToString()));
             }
         }
 
@@ -256,6 +282,13 @@ namespace GSB_TGT
 
         }
         #endregion
+        private void btnPraAjouter_Click(object sender, EventArgs e)
+        {
+            Praticien p = new Praticien(txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, float.Parse(txbPraCoeffNot.Text), float.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+            DAOPraticien.addPraticien(p);
+            actualiserPraticien();
+        }
 
+        
     }
 }

@@ -36,5 +36,29 @@ namespace GSB_TGT
         {
             throw new NotImplementedException();
         }
+
+        public static int getIdSpecialiteFromNomSpecialite(string nomSpe)
+        {
+            int res = 0;
+            try
+            {
+
+                String req = "select idSpecialite from specialite where nomSpecialite ='" + nomSpe + "'";
+                SqlDataReader dr;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                dr = db.execSQLread(req);
+                while (dr.Read())
+                {
+                    res = dr.GetInt32(0);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return res;
+        }
     }
 }

@@ -57,6 +57,29 @@ namespace GSB_TGT
             }
             return res;
         }
+        public static string getNomFamilleFromIdFamille(int id)
+        {
+            string res = null;
+            try
+            {
+
+                String req = "select nomFamille from famille where idFamille ='" + id + "'";
+                SqlDataReader dr;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                dr = db.execSQLread(req);
+                while (dr.Read())
+                {
+                    res = dr.GetValue(0).ToString();
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return res;
+        }
 
     }
 

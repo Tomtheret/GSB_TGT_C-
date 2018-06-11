@@ -38,10 +38,6 @@
             this.btnProAssocier = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dgvInteraction = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnProRechercher = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txbProRechercher = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnProModifier = new System.Windows.Forms.Button();
             this.btnProAjouter = new System.Windows.Forms.Button();
@@ -143,7 +139,6 @@
             this.groupBox14.SuspendLayout();
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInteraction)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicaments)).BeginInit();
@@ -181,7 +176,6 @@
             this.tabProduits.Controls.Add(this.btnProDissocier);
             this.tabProduits.Controls.Add(this.groupBox14);
             this.tabProduits.Controls.Add(this.groupBox13);
-            this.tabProduits.Controls.Add(this.groupBox3);
             this.tabProduits.Controls.Add(this.groupBox4);
             this.tabProduits.Controls.Add(this.groupBox1);
             this.tabProduits.Controls.Add(this.groupBox2);
@@ -211,6 +205,7 @@
             this.btnProDissocier.TabIndex = 21;
             this.btnProDissocier.Text = "Dissocier";
             this.btnProDissocier.UseVisualStyleBackColor = true;
+            this.btnProDissocier.Click += new System.EventHandler(this.btnProDissocier_Click);
             // 
             // groupBox14
             // 
@@ -273,44 +268,6 @@
             this.dgvInteraction.TabIndex = 0;
             this.dgvInteraction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInteraction_CellContentClick);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.groupBox3.Controls.Add(this.btnProRechercher);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.txbProRechercher);
-            this.groupBox3.Location = new System.Drawing.Point(450, 103);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(284, 69);
-            this.groupBox3.TabIndex = 18;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Rechercher";
-            // 
-            // btnProRechercher
-            // 
-            this.btnProRechercher.Location = new System.Drawing.Point(176, 25);
-            this.btnProRechercher.Name = "btnProRechercher";
-            this.btnProRechercher.Size = new System.Drawing.Size(90, 23);
-            this.btnProRechercher.TabIndex = 2;
-            this.btnProRechercher.Text = "Rechercher";
-            this.btnProRechercher.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Mot-clé : ";
-            // 
-            // txbProRechercher
-            // 
-            this.txbProRechercher.Location = new System.Drawing.Point(63, 26);
-            this.txbProRechercher.Name = "txbProRechercher";
-            this.txbProRechercher.Size = new System.Drawing.Size(91, 20);
-            this.txbProRechercher.TabIndex = 0;
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -355,6 +312,7 @@
             this.btnProAnnuler.TabIndex = 17;
             this.btnProAnnuler.Text = "Annuler";
             this.btnProAnnuler.UseVisualStyleBackColor = true;
+            this.btnProAnnuler.Click += new System.EventHandler(this.btnProAnnuler_Click);
             // 
             // btnProSupprimer
             // 
@@ -1212,8 +1170,6 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInteraction)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicaments)).EndInit();
@@ -1260,9 +1216,6 @@
         private System.Windows.Forms.TextBox txbProNum;
         private System.Windows.Forms.TabPage tabPraticiens;
         private System.Windows.Forms.TabPage tabVisiteur;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txbProRechercher;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnProModifier;
         private System.Windows.Forms.Button btnProAjouter;
@@ -1325,7 +1278,6 @@
         private System.Windows.Forms.TextBox txbProDosage;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txbPraTelephone;
-        private System.Windows.Forms.Button btnProRechercher;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnPraRechercher;
         private System.Windows.Forms.Label label20;
