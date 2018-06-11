@@ -84,9 +84,9 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "UPDATE Visiteur SET nomVisiteur = '" + visiteur.Nom + "', prenomVisiteur = '" + visiteur.Prenom
-                    + "', adresse = '" + visiteur.Adresse + "', cpVisiteur = '" + visiteur.Cp + "', villeVisiteur = '" + visiteur.Ville + "', dateEmbauche = '" + visiteur.DateEmbauche + "', numeSecteur = '" + (visiteur.SecteurVisiteur).IdSecteur + "'"
-                    + " WHERE numVisiteur =" + visiteur.Id;
+                String req = "UPDATE Visiteur SET nom = '" + visiteur.Nom + "', prenom = '" + visiteur.Prenom
+                    + "', adresse = '" + visiteur.Adresse + "', cp = '" + visiteur.Cp + "', ville = '" + visiteur.Ville + "', dateEmbauche = '" + visiteur.DateEmbauche + "', idSecteur = '" + (visiteur.SecteurVisiteur).IdSecteur + "'"
+                    + " WHERE id =" + visiteur.Id;
                 SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
