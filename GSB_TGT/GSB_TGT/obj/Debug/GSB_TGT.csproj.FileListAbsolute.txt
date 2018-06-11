@@ -45,3 +45,10 @@ G:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.Properties.Resources.re
 G:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.GenerateResource.Cache
 G:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe
 G:\E4\GSB_Teama_CSharp\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.pdb
+G:\GSB\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe
+G:\GSB\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.pdb
+G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csprojResolveAssemblyReference.cache
+G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.FrmConnexion.resources
+G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.FrmGSB.resources
+G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.Properties.Resources.resources
+G:\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.GenerateResource.Cache
