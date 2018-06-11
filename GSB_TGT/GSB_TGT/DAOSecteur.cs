@@ -15,7 +15,7 @@ namespace GSB_TGT
             List<Secteur> Localisation = new List<Secteur>();
             try
             {
-                String req = "Select * from SecteurVisiteur";
+                String req = "Select * from secteur";
                 SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();

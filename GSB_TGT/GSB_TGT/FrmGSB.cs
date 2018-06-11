@@ -18,6 +18,8 @@ namespace GSB_TGT
 		private List<Interaction> listInteraction;
         private List<Visiteur> listVisiteur;
         private List<Praticien> listPraticiens;
+        private List<Secteur> listSecteur;
+        private List<Specialite> listSpecialite;
         public FrmGSB()
         {
             InitializeComponent();
@@ -58,11 +60,24 @@ namespace GSB_TGT
 			{
 				cbxProFamille.Items.Add(listfamill.NomFamille);
 			}
+
             // Visiteurs
             actualiserVisiteur();
+            listSecteur = DAOSecteur.Secteurs();
+            cbxVisSecteur.DataSource = null;
+            foreach (Secteur listSec in listSecteur)
+            {
+                cbxVisSecteur.Items.Add(listSec.NomSecteur);
+            }
 
             //Praticiens  
             actualiserPraticien();
+            listSpecialite = DAOSpecialite.ListeSpecialites();
+            cbxPraSpec.DataSource = null;
+            foreach (Specialite listSpec in listSpecialite)
+            {
+                cbxPraSpec.Items.Add(listSpec.NomSpecialite);
+            }
         }
 
         #region Praticiens
@@ -190,7 +205,7 @@ namespace GSB_TGT
 
         #endregion
 
-
+        #region boutons
         private void btnPraModifier_Click(object sender, EventArgs e)
         {
            
@@ -240,5 +255,7 @@ namespace GSB_TGT
             }
 
         }
+        #endregion
+
     }
 }
