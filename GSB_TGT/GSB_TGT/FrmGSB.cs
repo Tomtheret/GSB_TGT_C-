@@ -187,8 +187,58 @@ namespace GSB_TGT
             DAOInteractions.setInteraction(i);
             actualiserProduit();
         }
+
         #endregion
 
 
+        private void btnPraModifier_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnProUpdt_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvMedicaments.SelectedRows)
+            {
+                txbProNum.Text = row.Cells[0].Value.ToString();
+                txbProNom.Text = row.Cells[1].Value.ToString();
+                txbProEffet.Text = row.Cells[2].Value.ToString();
+                txbProContreInd.Text = row.Cells[3].Value.ToString();
+                txbProPresentation.Text = row.Cells[4].Value.ToString();
+                txbProDosage.Text = row.Cells[5].Value.ToString();
+                txbProPrix.Text = row.Cells[6].Value.ToString();
+                txbProPrixEchantillon.Text = row.Cells[7].Value.ToString();
+                cbxProFamille.Text = row.Cells[8].Value.ToString();
+            }
+        }
+
+        private void btnPraUpdt_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvPraticiens.SelectedRows)
+            {
+                txbPraContact.Text = row.Cells[0].Value.ToString();
+                txbPraRaisonSoc.Text = row.Cells[1].Value.ToString();
+                txbPraAdresse.Text = row.Cells[2].Value.ToString();
+                txbPraCoeffConf.Text = row.Cells[3].Value.ToString();
+                txbPraCoeffNot.Text = row.Cells[4].Value.ToString();
+                txbPraTelephone.Text = row.Cells[5].Value.ToString();
+                cbxPraSpec.Text = row.Cells[6].Value.ToString();
+            }
+        }
+
+        private void btnVisUpdt_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvVisiteurs.SelectedRows)
+            {
+                txbVisNom.Text = row.Cells[0].Value.ToString();
+                txbVisPrenom.Text = row.Cells[1].Value.ToString();
+                txbVisAdresse.Text = row.Cells[2].Value.ToString();
+                txbVisVille.Text = row.Cells[3].Value.ToString();
+                txbVisCp.Text = row.Cells[4].Value.ToString();
+                txbVisDateEmb.Text = row.Cells[5].Value.ToString();
+                cbxVisSecteur.Text = row.Cells[6].Value.ToString();
+            }
+
+        }
     }
 }

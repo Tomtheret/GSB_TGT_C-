@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabProduits = new System.Windows.Forms.TabPage();
+            this.btnProUpdt = new System.Windows.Forms.Button();
             this.btnProDissocier = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.cbxProAssociation2 = new System.Windows.Forms.ComboBox();
@@ -68,6 +69,7 @@
             this.txbProNom = new System.Windows.Forms.TextBox();
             this.txbProNum = new System.Windows.Forms.TextBox();
             this.tabPraticiens = new System.Windows.Forms.TabPage();
+            this.btnPraUpdt = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnPraRechercher = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -79,6 +81,13 @@
             this.btnPraSupprimer = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvPraticiens = new System.Windows.Forms.DataGridView();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raisonSoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefNot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txbPraTelephone = new System.Windows.Forms.TextBox();
@@ -86,17 +95,16 @@
             this.txbPraCoeffConf = new System.Windows.Forms.TextBox();
             this.cbxPraSpec = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txbPraAdresse = new System.Windows.Forms.TextBox();
-            this.txtPraRaisonSoc = new System.Windows.Forms.TextBox();
+            this.txbPraRaisonSoc = new System.Windows.Forms.TextBox();
             this.txbPraCoeffNot = new System.Windows.Forms.TextBox();
             this.txbPraContact = new System.Windows.Forms.TextBox();
-            this.txbPraCode = new System.Windows.Forms.TextBox();
             this.tabVisiteur = new System.Windows.Forms.TabPage();
+            this.btnVisUpdt = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.btnVisRechercher = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
@@ -108,6 +116,13 @@
             this.btnVisSupprimer = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.dgvVisiteurs = new System.Windows.Forms.DataGridView();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEmbauche = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
             this.txbVisDateEmb = new System.Windows.Forms.TextBox();
@@ -123,20 +138,6 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEmbauche = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.secteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.raisonSoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coefNot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coefConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -176,6 +177,7 @@
             // tabProduits
             // 
             this.tabProduits.BackColor = System.Drawing.Color.LightGray;
+            this.tabProduits.Controls.Add(this.btnProUpdt);
             this.tabProduits.Controls.Add(this.btnProDissocier);
             this.tabProduits.Controls.Add(this.groupBox14);
             this.tabProduits.Controls.Add(this.groupBox13);
@@ -189,6 +191,17 @@
             this.tabProduits.Size = new System.Drawing.Size(999, 471);
             this.tabProduits.TabIndex = 0;
             this.tabProduits.Text = "Produits";
+            // 
+            // btnProUpdt
+            // 
+            this.btnProUpdt.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnProUpdt.Location = new System.Drawing.Point(667, 437);
+            this.btnProUpdt.Name = "btnProUpdt";
+            this.btnProUpdt.Size = new System.Drawing.Size(39, 25);
+            this.btnProUpdt.TabIndex = 22;
+            this.btnProUpdt.Text = "Updt";
+            this.btnProUpdt.UseVisualStyleBackColor = true;
+            this.btnProUpdt.Click += new System.EventHandler(this.btnProUpdt_Click);
             // 
             // btnProDissocier
             // 
@@ -551,6 +564,7 @@
             // tabPraticiens
             // 
             this.tabPraticiens.BackColor = System.Drawing.Color.LightGray;
+            this.tabPraticiens.Controls.Add(this.btnPraUpdt);
             this.tabPraticiens.Controls.Add(this.groupBox9);
             this.tabPraticiens.Controls.Add(this.groupBox8);
             this.tabPraticiens.Controls.Add(this.groupBox7);
@@ -562,6 +576,17 @@
             this.tabPraticiens.TabIndex = 1;
             this.tabPraticiens.Text = "Praticiens";
             this.tabPraticiens.Click += new System.EventHandler(this.tabPraticiens_Click);
+            // 
+            // btnPraUpdt
+            // 
+            this.btnPraUpdt.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnPraUpdt.Location = new System.Drawing.Point(667, 437);
+            this.btnPraUpdt.Name = "btnPraUpdt";
+            this.btnPraUpdt.Size = new System.Drawing.Size(39, 25);
+            this.btnPraUpdt.TabIndex = 23;
+            this.btnPraUpdt.Text = "Updt";
+            this.btnPraUpdt.UseVisualStyleBackColor = true;
+            this.btnPraUpdt.Click += new System.EventHandler(this.btnPraUpdt_Click);
             // 
             // groupBox9
             // 
@@ -624,6 +649,7 @@
             this.btnPraModifier.TabIndex = 19;
             this.btnPraModifier.Text = "Modifier";
             this.btnPraModifier.UseVisualStyleBackColor = true;
+            this.btnPraModifier.Click += new System.EventHandler(this.btnPraModifier_Click);
             // 
             // btnPraAjouter
             // 
@@ -682,6 +708,41 @@
             this.dgvPraticiens.Size = new System.Drawing.Size(641, 264);
             this.dgvPraticiens.TabIndex = 0;
             // 
+            // contact
+            // 
+            this.contact.HeaderText = "Contact";
+            this.contact.Name = "contact";
+            // 
+            // raisonSoc
+            // 
+            this.raisonSoc.HeaderText = "Raison Sociale";
+            this.raisonSoc.Name = "raisonSoc";
+            // 
+            // adressePra
+            // 
+            this.adressePra.HeaderText = "Adresse";
+            this.adressePra.Name = "adressePra";
+            // 
+            // telephone
+            // 
+            this.telephone.HeaderText = "Téléphone";
+            this.telephone.Name = "telephone";
+            // 
+            // coefNot
+            // 
+            this.coefNot.HeaderText = "Coefficient Notoriété";
+            this.coefNot.Name = "coefNot";
+            // 
+            // coefConf
+            // 
+            this.coefConf.HeaderText = "Coefficient Confiance";
+            this.coefConf.Name = "coefConf";
+            // 
+            // specialite
+            // 
+            this.specialite.HeaderText = "Spécialité";
+            this.specialite.Name = "specialite";
+            // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -691,16 +752,14 @@
             this.groupBox5.Controls.Add(this.txbPraCoeffConf);
             this.groupBox5.Controls.Add(this.cbxPraSpec);
             this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.txbPraAdresse);
-            this.groupBox5.Controls.Add(this.txtPraRaisonSoc);
+            this.groupBox5.Controls.Add(this.txbPraRaisonSoc);
             this.groupBox5.Controls.Add(this.txbPraCoeffNot);
             this.groupBox5.Controls.Add(this.txbPraContact);
-            this.groupBox5.Controls.Add(this.txbPraCode);
             this.groupBox5.Location = new System.Drawing.Point(3, 6);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(992, 91);
@@ -757,15 +816,6 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Raison sociale : ";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(96, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Code:  ";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -809,12 +859,12 @@
             this.txbPraAdresse.Size = new System.Drawing.Size(100, 20);
             this.txbPraAdresse.TabIndex = 4;
             // 
-            // txtPraRaisonSoc
+            // txbPraRaisonSoc
             // 
-            this.txtPraRaisonSoc.Location = new System.Drawing.Point(143, 65);
-            this.txtPraRaisonSoc.Name = "txtPraRaisonSoc";
-            this.txtPraRaisonSoc.Size = new System.Drawing.Size(100, 20);
-            this.txtPraRaisonSoc.TabIndex = 3;
+            this.txbPraRaisonSoc.Location = new System.Drawing.Point(143, 65);
+            this.txbPraRaisonSoc.Name = "txbPraRaisonSoc";
+            this.txbPraRaisonSoc.Size = new System.Drawing.Size(100, 20);
+            this.txbPraRaisonSoc.TabIndex = 3;
             // 
             // txbPraCoeffNot
             // 
@@ -830,16 +880,10 @@
             this.txbPraContact.Size = new System.Drawing.Size(100, 20);
             this.txbPraContact.TabIndex = 1;
             // 
-            // txbPraCode
-            // 
-            this.txbPraCode.Location = new System.Drawing.Point(143, 19);
-            this.txbPraCode.Name = "txbPraCode";
-            this.txbPraCode.Size = new System.Drawing.Size(100, 20);
-            this.txbPraCode.TabIndex = 0;
-            // 
             // tabVisiteur
             // 
             this.tabVisiteur.BackColor = System.Drawing.Color.LightGray;
+            this.tabVisiteur.Controls.Add(this.btnVisUpdt);
             this.tabVisiteur.Controls.Add(this.groupBox12);
             this.tabVisiteur.Controls.Add(this.groupBox11);
             this.tabVisiteur.Controls.Add(this.groupBox10);
@@ -851,6 +895,17 @@
             this.tabVisiteur.TabIndex = 2;
             this.tabVisiteur.Text = "Visiteur médicaux";
             this.tabVisiteur.Click += new System.EventHandler(this.tabVisiteur_Click);
+            // 
+            // btnVisUpdt
+            // 
+            this.btnVisUpdt.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnVisUpdt.Location = new System.Drawing.Point(667, 437);
+            this.btnVisUpdt.Name = "btnVisUpdt";
+            this.btnVisUpdt.Size = new System.Drawing.Size(39, 25);
+            this.btnVisUpdt.TabIndex = 23;
+            this.btnVisUpdt.Text = "Updt";
+            this.btnVisUpdt.UseVisualStyleBackColor = true;
+            this.btnVisUpdt.Click += new System.EventHandler(this.btnVisUpdt_Click);
             // 
             // groupBox12
             // 
@@ -970,6 +1025,41 @@
             this.dgvVisiteurs.Name = "dgvVisiteurs";
             this.dgvVisiteurs.Size = new System.Drawing.Size(641, 264);
             this.dgvVisiteurs.TabIndex = 0;
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
+            // 
+            // prenom
+            // 
+            this.prenom.HeaderText = "Prénom";
+            this.prenom.Name = "prenom";
+            // 
+            // adresse
+            // 
+            this.adresse.HeaderText = "Adresse";
+            this.adresse.Name = "adresse";
+            // 
+            // cp
+            // 
+            this.cp.HeaderText = "Code Postal";
+            this.cp.Name = "cp";
+            // 
+            // ville
+            // 
+            this.ville.HeaderText = "Ville";
+            this.ville.Name = "ville";
+            // 
+            // dateEmbauche
+            // 
+            this.dateEmbauche.HeaderText = "Date d\'embauche";
+            this.dateEmbauche.Name = "dateEmbauche";
+            // 
+            // secteur
+            // 
+            this.secteur.HeaderText = "Secteur";
+            this.secteur.Name = "secteur";
             // 
             // groupBox6
             // 
@@ -1108,76 +1198,6 @@
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
             // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nom";
-            this.nom.Name = "nom";
-            // 
-            // prenom
-            // 
-            this.prenom.HeaderText = "Prénom";
-            this.prenom.Name = "prenom";
-            // 
-            // adresse
-            // 
-            this.adresse.HeaderText = "Adresse";
-            this.adresse.Name = "adresse";
-            // 
-            // cp
-            // 
-            this.cp.HeaderText = "Code Postal";
-            this.cp.Name = "cp";
-            // 
-            // ville
-            // 
-            this.ville.HeaderText = "Ville";
-            this.ville.Name = "ville";
-            // 
-            // dateEmbauche
-            // 
-            this.dateEmbauche.HeaderText = "Date d\'embauche";
-            this.dateEmbauche.Name = "dateEmbauche";
-            // 
-            // secteur
-            // 
-            this.secteur.HeaderText = "Secteur";
-            this.secteur.Name = "secteur";
-            // 
-            // contact
-            // 
-            this.contact.HeaderText = "Contact";
-            this.contact.Name = "contact";
-            // 
-            // raisonSoc
-            // 
-            this.raisonSoc.HeaderText = "Raison Sociale";
-            this.raisonSoc.Name = "raisonSoc";
-            // 
-            // adressePra
-            // 
-            this.adressePra.HeaderText = "Adresse";
-            this.adressePra.Name = "adressePra";
-            // 
-            // telephone
-            // 
-            this.telephone.HeaderText = "Téléphone";
-            this.telephone.Name = "telephone";
-            // 
-            // coefNot
-            // 
-            this.coefNot.HeaderText = "Coefficient Notoriété";
-            this.coefNot.Name = "coefNot";
-            // 
-            // coefConf
-            // 
-            this.coefConf.HeaderText = "Coefficient Confiance";
-            this.coefConf.Name = "coefConf";
-            // 
-            // specialite
-            // 
-            this.specialite.HeaderText = "Spécialité";
-            this.specialite.Name = "specialite";
-            // 
             // FrmGSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1251,16 +1271,14 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox cbxPraSpec;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txbPraAdresse;
-        private System.Windows.Forms.TextBox txtPraRaisonSoc;
+        private System.Windows.Forms.TextBox txbPraRaisonSoc;
         private System.Windows.Forms.TextBox txbPraCoeffNot;
         private System.Windows.Forms.TextBox txbPraContact;
-        private System.Windows.Forms.TextBox txbPraCode;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ComboBox cbxVisSecteur;
         private System.Windows.Forms.Label label14;
@@ -1330,6 +1348,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coefNot;
         private System.Windows.Forms.DataGridViewTextBoxColumn coefConf;
         private System.Windows.Forms.DataGridViewTextBoxColumn specialite;
+        private System.Windows.Forms.Button btnProUpdt;
+        private System.Windows.Forms.Button btnPraUpdt;
+        private System.Windows.Forms.Button btnVisUpdt;
     }
 }
 
