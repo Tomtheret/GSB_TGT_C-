@@ -45,14 +45,14 @@ namespace GSB_TGT
         }
         #endregion
 
-        public static Secteur getSecteurByID(int num)
+        public static Secteur getSecteurByID(int id)
         {
             List<Secteur> lesSecteurs = DAOSecteur.Secteurs();
             int i = 0;
             bool found = false;
             while (!found && i < lesSecteurs.Count)
             {
-                found = (lesSecteurs.ElementAt(i).idSecteur == num);
+                found = (lesSecteurs.ElementAt(i).idSecteur == id);
                 if (!found)
                 {
                     i++;

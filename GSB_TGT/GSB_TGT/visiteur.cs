@@ -19,7 +19,7 @@ namespace GSB_TGT
         private string dateEmbauche;
         private Secteur secteurVisiteur;
 
-        public Visiteur(int idVisiteur, string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur, Secteur SecteurVisiteur)
+        public Visiteur(int idVisiteur, string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur, Secteur secteurVisiteur)
         {
             this.Id = idVisiteur;
             this.Nom = nomVisiteur;

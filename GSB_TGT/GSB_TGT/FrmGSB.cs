@@ -80,8 +80,15 @@ namespace GSB_TGT
         private void actualiserVisiteur()
         {
             listVisiteur = DAOVisiteur.lesVisiteurs();
-            dgvVisiteurs.DataSource = null;
-            dgvVisiteurs.DataSource = listVisiteur;
+            /*dgvVisiteurs.DataSource = null;
+            dgvVisiteurs.DataSource = listVisiteur;*/
+           
+            for (int i = 0; i < listVisiteur.Count ; i++)
+            {
+                Visiteur v = listVisiteur.ElementAt(i);
+                Secteur s = v.SecteurVisiteur;
+                dgvVisiteurs.Rows.Add(v.Nom,v.Prenom,v.Adresse,v.Ville,v.Cp,v.DateEmbauche,s.NomSecteur);
+            }
 
         }
 
@@ -175,5 +182,7 @@ namespace GSB_TGT
             actualiserProduit();
         }
         #endregion
+
+
     }
 }

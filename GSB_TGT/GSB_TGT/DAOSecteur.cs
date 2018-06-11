@@ -32,13 +32,37 @@ namespace GSB_TGT
             return Localisation;
         }
 
-        public static int getNomSecteurFromIdSecteur(Secteur idSecteur)
+        public static int getNomSecteurFromIdSecteur(int idSecteur)
         {
             int res = 0;
             try
             {
 
                 String req = "select nomSecteur from famille where idSecteur ='" + idSecteur + "'";
+                SqlDataReader dr;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                dr = db.execSQLread(req);
+                while (dr.Read())
+                {
+                    res = dr.GetInt32(0);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return res;
+        }
+
+        public static int getIdSecteurFromNomSecteur(String nomSecteur)
+        {
+            int res = 0;
+            try
+            {
+
+                String req = "select nomSecteur from famille where idSecteur ='" + nomSecteur + "'";
                 SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();

@@ -123,6 +123,13 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEmbauche = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -936,6 +943,14 @@
             // 
             this.dgvVisiteurs.BackgroundColor = System.Drawing.Color.White;
             this.dgvVisiteurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVisiteurs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nom,
+            this.prenom,
+            this.adresse,
+            this.cp,
+            this.ville,
+            this.dateEmbauche,
+            this.secteur});
             this.dgvVisiteurs.Location = new System.Drawing.Point(6, 21);
             this.dgvVisiteurs.Name = "dgvVisiteurs";
             this.dgvVisiteurs.Size = new System.Drawing.Size(641, 264);
@@ -1078,6 +1093,41 @@
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
             // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
+            // 
+            // prenom
+            // 
+            this.prenom.HeaderText = "Prénom";
+            this.prenom.Name = "prenom";
+            // 
+            // adresse
+            // 
+            this.adresse.HeaderText = "Adresse";
+            this.adresse.Name = "adresse";
+            // 
+            // cp
+            // 
+            this.cp.HeaderText = "Code Postal";
+            this.cp.Name = "cp";
+            // 
+            // ville
+            // 
+            this.ville.HeaderText = "Ville";
+            this.ville.Name = "ville";
+            // 
+            // dateEmbauche
+            // 
+            this.dateEmbauche.HeaderText = "Date d\'embauche";
+            this.dateEmbauche.Name = "dateEmbauche";
+            // 
+            // secteur
+            // 
+            this.secteur.HeaderText = "Secteur";
+            this.secteur.Name = "secteur";
+            // 
             // FrmGSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1216,6 +1266,13 @@
         private System.Windows.Forms.Button btnVisRechercher;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txbVisRechercher;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ville;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateEmbauche;
+        private System.Windows.Forms.DataGridViewTextBoxColumn secteur;
     }
 }
 
