@@ -38,6 +38,7 @@
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dgvInteraction = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnProRechercher = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txbProRechercher = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -67,6 +68,10 @@
             this.txbProNom = new System.Windows.Forms.TextBox();
             this.txbProNum = new System.Windows.Forms.TextBox();
             this.tabPraticiens = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnPraRechercher = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txbPraRechercher = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btnPraModifier = new System.Windows.Forms.Button();
             this.btnPraAjouter = new System.Windows.Forms.Button();
@@ -100,6 +105,10 @@
             this.txbPraContact = new System.Windows.Forms.TextBox();
             this.txbPraCode = new System.Windows.Forms.TextBox();
             this.tabVisiteur = new System.Windows.Forms.TabPage();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.btnVisRechercher = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txbVisRechercher = new System.Windows.Forms.TextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.btnVisModifier = new System.Windows.Forms.Button();
             this.btnVisAjouter = new System.Windows.Forms.Button();
@@ -129,15 +138,6 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
-            this.btnProRechercher = new System.Windows.Forms.Button();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.btnPraRechercher = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txbPraRechercher = new System.Windows.Forms.TextBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.btnVisRechercher = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txbVisRechercher = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -149,17 +149,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicaments)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPraticiens.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPraticients)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tabVisiteur.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurs)).BeginInit();
             this.groupBox6.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -237,6 +237,7 @@
             this.btnProAssocier.TabIndex = 0;
             this.btnProAssocier.Text = "Associer";
             this.btnProAssocier.UseVisualStyleBackColor = true;
+            this.btnProAssocier.Click += new System.EventHandler(this.btnProAssocier_Click);
             // 
             // groupBox13
             // 
@@ -272,6 +273,15 @@
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rechercher";
+            // 
+            // btnProRechercher
+            // 
+            this.btnProRechercher.Location = new System.Drawing.Point(176, 25);
+            this.btnProRechercher.Name = "btnProRechercher";
+            this.btnProRechercher.Size = new System.Drawing.Size(90, 23);
+            this.btnProRechercher.TabIndex = 2;
+            this.btnProRechercher.Text = "Rechercher";
+            this.btnProRechercher.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -553,6 +563,44 @@
             this.tabPraticiens.TabIndex = 1;
             this.tabPraticiens.Text = "Praticiens";
             this.tabPraticiens.Click += new System.EventHandler(this.tabPraticiens_Click);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.groupBox9.Controls.Add(this.btnPraRechercher);
+            this.groupBox9.Controls.Add(this.label20);
+            this.groupBox9.Controls.Add(this.txbPraRechercher);
+            this.groupBox9.Location = new System.Drawing.Point(450, 103);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(284, 69);
+            this.groupBox9.TabIndex = 21;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Rechercher";
+            // 
+            // btnPraRechercher
+            // 
+            this.btnPraRechercher.Location = new System.Drawing.Point(176, 25);
+            this.btnPraRechercher.Name = "btnPraRechercher";
+            this.btnPraRechercher.Size = new System.Drawing.Size(90, 23);
+            this.btnPraRechercher.TabIndex = 2;
+            this.btnPraRechercher.Text = "Rechercher";
+            this.btnPraRechercher.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 30);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 13);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Mot-clé : ";
+            // 
+            // txbPraRechercher
+            // 
+            this.txbPraRechercher.Location = new System.Drawing.Point(63, 26);
+            this.txbPraRechercher.Name = "txbPraRechercher";
+            this.txbPraRechercher.Size = new System.Drawing.Size(91, 20);
+            this.txbPraRechercher.TabIndex = 0;
             // 
             // groupBox8
             // 
@@ -862,6 +910,44 @@
             this.tabVisiteur.Text = "Visiteur médicaux";
             this.tabVisiteur.Click += new System.EventHandler(this.tabVisiteur_Click);
             // 
+            // groupBox12
+            // 
+            this.groupBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.groupBox12.Controls.Add(this.btnVisRechercher);
+            this.groupBox12.Controls.Add(this.label21);
+            this.groupBox12.Controls.Add(this.txbVisRechercher);
+            this.groupBox12.Location = new System.Drawing.Point(450, 103);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(284, 69);
+            this.groupBox12.TabIndex = 20;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Rechercher";
+            // 
+            // btnVisRechercher
+            // 
+            this.btnVisRechercher.Location = new System.Drawing.Point(176, 25);
+            this.btnVisRechercher.Name = "btnVisRechercher";
+            this.btnVisRechercher.Size = new System.Drawing.Size(90, 23);
+            this.btnVisRechercher.TabIndex = 2;
+            this.btnVisRechercher.Text = "Rechercher";
+            this.btnVisRechercher.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 30);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(51, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Mot-clé : ";
+            // 
+            // txbVisRechercher
+            // 
+            this.txbVisRechercher.Location = new System.Drawing.Point(63, 26);
+            this.txbVisRechercher.Name = "txbVisRechercher";
+            this.txbVisRechercher.Size = new System.Drawing.Size(91, 20);
+            this.txbVisRechercher.TabIndex = 0;
+            // 
             // groupBox11
             // 
             this.groupBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -1129,91 +1215,6 @@
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
             // 
-            // btnProRechercher
-            // 
-            this.btnProRechercher.Location = new System.Drawing.Point(176, 25);
-            this.btnProRechercher.Name = "btnProRechercher";
-            this.btnProRechercher.Size = new System.Drawing.Size(90, 23);
-            this.btnProRechercher.TabIndex = 2;
-            this.btnProRechercher.Text = "Rechercher";
-            this.btnProRechercher.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.groupBox9.Controls.Add(this.btnPraRechercher);
-            this.groupBox9.Controls.Add(this.label20);
-            this.groupBox9.Controls.Add(this.txbPraRechercher);
-            this.groupBox9.Location = new System.Drawing.Point(450, 103);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(284, 69);
-            this.groupBox9.TabIndex = 21;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Rechercher";
-            // 
-            // btnPraRechercher
-            // 
-            this.btnPraRechercher.Location = new System.Drawing.Point(176, 25);
-            this.btnPraRechercher.Name = "btnPraRechercher";
-            this.btnPraRechercher.Size = new System.Drawing.Size(90, 23);
-            this.btnPraRechercher.TabIndex = 2;
-            this.btnPraRechercher.Text = "Rechercher";
-            this.btnPraRechercher.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 30);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 13);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "Mot-clé : ";
-            // 
-            // txbPraRechercher
-            // 
-            this.txbPraRechercher.Location = new System.Drawing.Point(63, 26);
-            this.txbPraRechercher.Name = "txbPraRechercher";
-            this.txbPraRechercher.Size = new System.Drawing.Size(91, 20);
-            this.txbPraRechercher.TabIndex = 0;
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.groupBox12.Controls.Add(this.btnVisRechercher);
-            this.groupBox12.Controls.Add(this.label21);
-            this.groupBox12.Controls.Add(this.txbVisRechercher);
-            this.groupBox12.Location = new System.Drawing.Point(450, 103);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(284, 69);
-            this.groupBox12.TabIndex = 20;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Rechercher";
-            // 
-            // btnVisRechercher
-            // 
-            this.btnVisRechercher.Location = new System.Drawing.Point(176, 25);
-            this.btnVisRechercher.Name = "btnVisRechercher";
-            this.btnVisRechercher.Size = new System.Drawing.Size(90, 23);
-            this.btnVisRechercher.TabIndex = 2;
-            this.btnVisRechercher.Text = "Rechercher";
-            this.btnVisRechercher.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 30);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(51, 13);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Mot-clé : ";
-            // 
-            // txbVisRechercher
-            // 
-            this.txbVisRechercher.Location = new System.Drawing.Point(63, 26);
-            this.txbVisRechercher.Name = "txbVisRechercher";
-            this.txbVisRechercher.Size = new System.Drawing.Size(91, 20);
-            this.txbVisRechercher.TabIndex = 0;
-            // 
             // FrmGSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1236,21 +1237,21 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPraticiens.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPraticients)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabVisiteur.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurs)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -83,14 +83,7 @@ namespace GSB_TGT
 				cbxProFamille.Items.Add(listfamill.NomFamille);
 			}
 
-			listInteraction = DAOInteractions.listeInteractions();
-			cbxProAssociation1.DataSource = null;
-			cbxProAssociation2.DataSource = null;
-			foreach (Interaction uneInteraction in listInteraction)
-			{
-				cbxProAssociation1.Items.Add(uneInteraction.Interaction1);
-				cbxProAssociation2.Items.Add(uneInteraction.Interaction2);
-			}
+		
 		}
 
         private void btnProAjouter_Click(object sender, EventArgs e)
@@ -116,9 +109,19 @@ namespace GSB_TGT
 			dgvInteraction.DataSource = null;
 			dgvInteraction.DataSource = listInteraction;
 
+            cbxProAssociation1.DataSource = null;
+            cbxProAssociation2.DataSource = null;
+            foreach (Produit unProduit in listMedoc)
+            {
+                cbxProAssociation1.Items.Add(unProduit.Id_produit);
+                cbxProAssociation2.Items.Add(unProduit.Id_produit);
+            }
+            
 
-			
-		}
+
+
+
+        }
 
 		private void btnProModifier_Click(object sender, EventArgs e)
 		{
@@ -131,5 +134,12 @@ namespace GSB_TGT
 			Produit p = new Produit(Int32.Parse(txbProNum.Text), txbProNom.Text, txbProEffet.Text, txbProContreInd.Text, txbProPresentation.Text, txbProDosage.Text, float.Parse(txbProPrix.Text), float.Parse(txbProPrixEchantillon.Text), DAOFamilleMedoc.getIdFamilleFromNomFamille(cbxProFamille.Text));
 			DAOProduit.supprProduit(p);
 		}
-	}
+
+        private void btnProAssocier_Click(object sender, EventArgs e)
+        {
+            Interaction i = new Interaction(Int32.Parse(cbxProAssociation1.Text), Int32.Parse(cbxProAssociation2.Text));
+            DAOInteractions.setInteraction(i);
+            actualiserProduit();
+        }
+    }
 }
