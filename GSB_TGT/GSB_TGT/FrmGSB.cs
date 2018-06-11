@@ -16,7 +16,7 @@ namespace GSB_TGT
         private List<Produit> listMedoc;
         private List<FamilleMedoc> listfamille;
 		private List<Interaction> listInteraction;
-
+        private List<Visiteur> listVisiteur;
         public FrmGSB()
         {
             InitializeComponent();
@@ -65,6 +65,13 @@ namespace GSB_TGT
 
         #region Visiteurs
 
+        private void actualiserVisiteur()
+        {
+            listVisiteur = DAOVisiteur.lesVisiteurs();
+            dgvVisiteurs.DataSource = null;
+            dgvVisiteurs.DataSource = listVisiteur;
+
+        }
 
         #endregion
 

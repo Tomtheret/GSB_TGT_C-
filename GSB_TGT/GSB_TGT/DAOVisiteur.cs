@@ -39,11 +39,11 @@ namespace GSB_TGT
             return Localisation;
         }
 
-        public static List<Visiteur> Visiteurs()
+        public static List<Visiteur> lesVisiteurs()
         {
             try
             {
-                String req = "Select id, nom, prenom, adresse, cp, ville, dateEmbauche, numSecteur, descriptionSecteur From Visiteur INNER JOIN SecteurVisiteur ON Visiteur.numSecteur = SecteurVisiteur.idSecteur";
+                String req = "Select id, nom, prenom, adresse, cp, ville, dateEmbauche, nomSecteur From Visiteur INNER JOIN Secteur ON Visiteur.idSecteur = Secteur.idSecteur";
                 SqlDataReader rs;
                 DAOFactory db = new DAOFactory();
                 db.connexion();

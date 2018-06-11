@@ -116,13 +116,6 @@
             this.btnVisSupprimer = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.dgvVisiteurs = new System.Windows.Forms.DataGridView();
-            this.visPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visSecteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visAdresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
             this.txbVisDateEmb = new System.Windows.Forms.TextBox();
@@ -1016,67 +1009,10 @@
             // 
             this.dgvVisiteurs.BackgroundColor = System.Drawing.Color.White;
             this.dgvVisiteurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVisiteurs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.visPrenom,
-            this.visNom,
-            this.visSecteur,
-            this.visDate,
-            this.visAdresse,
-            this.visCP,
-            this.visVille});
             this.dgvVisiteurs.Location = new System.Drawing.Point(6, 21);
             this.dgvVisiteurs.Name = "dgvVisiteurs";
             this.dgvVisiteurs.Size = new System.Drawing.Size(641, 264);
             this.dgvVisiteurs.TabIndex = 0;
-            // 
-            // visPrenom
-            // 
-            this.visPrenom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.visPrenom.HeaderText = "Prénom";
-            this.visPrenom.Name = "visPrenom";
-            this.visPrenom.Width = 68;
-            // 
-            // visNom
-            // 
-            this.visNom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.visNom.HeaderText = "Nom";
-            this.visNom.Name = "visNom";
-            this.visNom.Width = 54;
-            // 
-            // visSecteur
-            // 
-            this.visSecteur.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.visSecteur.HeaderText = "Secteur";
-            this.visSecteur.Name = "visSecteur";
-            this.visSecteur.Width = 69;
-            // 
-            // visDate
-            // 
-            this.visDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.visDate.HeaderText = "Date d\'embauche";
-            this.visDate.Name = "visDate";
-            this.visDate.Width = 106;
-            // 
-            // visAdresse
-            // 
-            this.visAdresse.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.visAdresse.HeaderText = "Adresse";
-            this.visAdresse.Name = "visAdresse";
-            this.visAdresse.Width = 70;
-            // 
-            // visCP
-            // 
-            this.visCP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.visCP.HeaderText = "Code Postal";
-            this.visCP.Name = "visCP";
-            this.visCP.Width = 82;
-            // 
-            // visVille
-            // 
-            this.visVille.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.visVille.HeaderText = "Ville";
-            this.visVille.Name = "visVille";
-            this.visVille.Width = 51;
             // 
             // groupBox6
             // 
@@ -1344,13 +1280,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn praSpecialite;
         private System.Windows.Forms.DataGridViewTextBoxColumn praCoeffNot;
         private System.Windows.Forms.DataGridViewTextBoxColumn praCoeffConf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visPrenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visNom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visSecteur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visAdresse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visCP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visVille;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txbProPrixEchantillon;
         private System.Windows.Forms.Label label25;
