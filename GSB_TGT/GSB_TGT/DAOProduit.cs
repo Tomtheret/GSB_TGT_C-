@@ -65,6 +65,7 @@ namespace GSB_TGT
             DAOFactory db = new DAOFactory();
             db.connexion();
             db.execSQLwrite(requete);
+            db.deconnexion();
 
         }
         public static void updateProduit(Produit p)
@@ -73,19 +74,21 @@ namespace GSB_TGT
             DAOFactory db = new DAOFactory();
             db.connexion();
             db.execSQLwrite(req);
-
+            db.deconnexion();
         }
 
 
 
         public static void supprProduit(Produit p)
         {
-            string req1 = "DELETE from interragir WHERE Id_produit='" + p.Id_produit + "' OR Id_produit_Medicament='" + p.Id_produit + "'";
-            string req2 = "DELETE from medicament WHERE Id_produit='" + p.Id_produit + "'";
+            string req1 = "DELETE from interragir WHERE id_produit='" + p.Id_produit + "' OR id_produit_Medicament='" + p.Id_produit + "'";
+            string req2 = "DELETE from medicament WHERE id_produit='" + p.Id_produit + "'";
             DAOFactory db = new DAOFactory();
             db.connexion();
             db.execSQLwrite(req1);
+
             db.execSQLwrite(req2);
+            db.deconnexion();
         }
 
 

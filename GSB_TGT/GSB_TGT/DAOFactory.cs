@@ -56,9 +56,9 @@ namespace GSB_TGT
                 maCommand = new SqlCommand();
                 maCommand.CommandText = req;
                 maCommand.Connection = maConnexion;
-                monDataAdapter = new SqlDataAdapter();
-                monDataAdapter.SelectCommand = maCommand;
-                maCommand.ExecuteReader();
+                /*monDataAdapter = new SqlDataAdapter();
+                monDataAdapter.SelectCommand = maCommand;*/
+                maCommand.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
