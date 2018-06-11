@@ -8,32 +8,37 @@ namespace GSB_TGT
 {
     class Secteur
     {
-        private int numSecteur;
-        private string libelleSecteur;
+        private int idSecteur;
+        private string nomSecteur;
 
+        public Secteur(int unIdSecteur, string unNomSecteur )
+        {
+            idSecteur = unIdSecteur;
+            nomSecteur = unNomSecteur;
+        }
         public int NumSecteur
         {
             get
             {
-                return numSecteur;
+                return idSecteur;
             }
 
             set
             {
-                numSecteur = value;
+                idSecteur = value;
             }
         }
 
-        public string LibelleSecteur
+        public string NomSecteur
         {
             get
             {
-                return libelleSecteur;
+                return nomSecteur;
             }
 
             set
             {
-                libelleSecteur = value;
+                nomSecteur = value;
             }
         }
 
