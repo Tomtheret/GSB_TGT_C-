@@ -641,6 +641,7 @@
             this.btnPraSupprimer.TabIndex = 16;
             this.btnPraSupprimer.Text = "Supprimer";
             this.btnPraSupprimer.UseVisualStyleBackColor = true;
+            this.btnPraSupprimer.Click += new System.EventHandler(this.btnPraSupprimer_Click);
             // 
             // groupBox7
             // 
@@ -979,6 +980,7 @@
             this.btnVisSupprimer.TabIndex = 16;
             this.btnVisSupprimer.Text = "Supprimer";
             this.btnVisSupprimer.UseVisualStyleBackColor = true;
+            this.btnVisSupprimer.Click += new System.EventHandler(this.btnVisSupprimer_Click);
             // 
             // groupBox10
             // 

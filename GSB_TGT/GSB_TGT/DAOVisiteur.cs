@@ -87,10 +87,9 @@ namespace GSB_TGT
                 String req = "UPDATE Visiteur SET nom = '" + visiteur.Nom + "', prenom = '" + visiteur.Prenom
                     + "', adresse = '" + visiteur.Adresse + "', cp = '" + visiteur.Cp + "', ville = '" + visiteur.Ville + "', dateEmbauche = '" + visiteur.DateEmbauche + "', idSecteur = '" + (visiteur.SecteurVisiteur).IdSecteur + "'"
                     + " WHERE id =" + visiteur.Id;
-                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                dr = db.execSQLread(req);
+                db.execSQLwrite(req);
             }
             catch (Exception ex)
             {
@@ -104,10 +103,9 @@ namespace GSB_TGT
             try
             {
                 String req = "Delete FROM Visiteur WHERE idVisiteur =" + visiteur.Id;
-                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                dr = db.execSQLread(req);
+                db.execSQLwrite(req);
             }
             catch (Exception ex)
             {

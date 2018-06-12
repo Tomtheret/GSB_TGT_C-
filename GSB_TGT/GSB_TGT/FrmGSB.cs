@@ -320,8 +320,21 @@ namespace GSB_TGT
             txbVisDateEmb.Text = "";
             cbxVisSecteur.Text = "";
         }
+
         #endregion
 
-        
+        private void btnVisSupprimer_Click(object sender, EventArgs e)
+        {
+            Visiteur v = new Visiteur(Int32.Parse(txbProNum.Text), txbProNom.Text, txbProEffet.Text, txbProContreInd.Text, txbProPresentation.Text, txbProDosage.Text, float.Parse(txbProPrix.Text), float.Parse(txbProPrixEchantillon.Text), DAOFamilleMedoc.getIdFamilleFromNomFamille(cbxProFamille.Text));
+            DAOVisiteur.supprimerVisiteur(v);
+            actualiserProduit();
+        }
+
+        private void btnPraSupprimer_Click(object sender, EventArgs e)
+        {
+            Praticien p = new Praticien(Int32.Parse(txbPraCode.Text), txbPraContact.Text, txbPraRaisonSoc.Text, txbPraAdresse.Text, float.Parse(txbPraCoeffConf.Text), float.Parse(txbPraCoeffNot.Text), txbPraTelephone.Text, DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+            DAOVisiteur.supprimerVisiteur(v);
+            actualiserProduit();
+        }
     }
 }
