@@ -283,7 +283,7 @@ namespace GSB_TGT
             }
 
         }
-        #endregion
+ 
         private void btnPraAjouter_Click(object sender, EventArgs e)
         {
             Praticien p = new Praticien(txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, float.Parse(txbPraCoeffNot.Text), float.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
@@ -297,5 +297,31 @@ namespace GSB_TGT
             DAOPraticien.addPraticien(p);
             actualiserPraticien();
         }
+
+        private void btnPraAnnuler_Click(object sender, EventArgs e)
+        {
+            txbPraCode.Text = "";
+            txbPraContact.Text = "";
+            txbPraRaisonSoc.Text = "";
+            txbPraAdresse.Text = "";
+            txbPraCoeffConf.Text = "";
+            txbPraCoeffNot.Text = "";
+            txbPraTelephone.Text = "";
+            cbxPraSpec.Text = "";
+        }
+
+        private void btnVisAnnuler_Click(object sender, EventArgs e)
+        {
+            txbVisNom.Text = "";
+            txbVisPrenom.Text = "";
+            txbVisAdresse.Text = "";
+            txbVisVille.Text = "";
+            txbVisCp.Text = "";
+            txbVisDateEmb.Text = "";
+            cbxVisSecteur.Text = "";
+        }
+        #endregion
+
+        
     }
 }

@@ -85,6 +85,8 @@
             this.coefConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txbPraCode = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txbPraTelephone = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -134,8 +136,6 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
-            this.txbPraCode = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -630,6 +630,7 @@
             this.btnPraAnnuler.TabIndex = 17;
             this.btnPraAnnuler.Text = "Annuler";
             this.btnPraAnnuler.UseVisualStyleBackColor = true;
+            this.btnPraAnnuler.Click += new System.EventHandler(this.btnPraAnnuler_Click);
             // 
             // btnPraSupprimer
             // 
@@ -729,6 +730,23 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Saisi des données";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(75, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Code : ";
+            // 
+            // txbPraCode
+            // 
+            this.txbPraCode.Enabled = false;
+            this.txbPraCode.Location = new System.Drawing.Point(143, 19);
+            this.txbPraCode.Name = "txbPraCode";
+            this.txbPraCode.Size = new System.Drawing.Size(100, 20);
+            this.txbPraCode.TabIndex = 19;
             // 
             // label19
             // 
@@ -950,6 +968,7 @@
             this.btnVisAnnuler.TabIndex = 17;
             this.btnVisAnnuler.Text = "Annuler";
             this.btnVisAnnuler.UseVisualStyleBackColor = true;
+            this.btnVisAnnuler.Click += new System.EventHandler(this.btnVisAnnuler_Click);
             // 
             // btnVisSupprimer
             // 
@@ -1160,23 +1179,6 @@
             this.txbVisPrenom.Name = "txbVisPrenom";
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
-            // 
-            // txbPraCode
-            // 
-            this.txbPraCode.Enabled = false;
-            this.txbPraCode.Location = new System.Drawing.Point(143, 19);
-            this.txbPraCode.Name = "txbPraCode";
-            this.txbPraCode.Size = new System.Drawing.Size(100, 20);
-            this.txbPraCode.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(75, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Code : ";
             // 
             // FrmGSB
             // 
