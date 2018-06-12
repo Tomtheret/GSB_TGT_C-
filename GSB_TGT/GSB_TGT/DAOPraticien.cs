@@ -44,11 +44,10 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "INSERT INTO praticien (Contact, Telephone, Raison_sociale, Adresse, Coef_notoriete, coef_confiance, idSpecialite) VALUES(" + praticien.Contact + "," + praticien.Telephone + "," + praticien.Raison_sociale + "," + praticien.Adresse + "," + praticien.Coef_notoriete + "," + praticien.Coef_confiance + "," + praticien.IdSpecialite +");";
-                SqlDataReader rs;
+                String req = "INSERT INTO praticien (Contact, Telephone, Raison_sociale, Adresse, Coef_notoriete, coef_confiance, idSpecialite) VALUES('" + praticien.Contact + "','" + praticien.Telephone + "','" + praticien.Raison_sociale + "','" + praticien.Adresse + "'," + praticien.Coef_notoriete + "," + praticien.Coef_confiance + "," + praticien.IdSpecialite +");";
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
+                db.execSQLwrite(req);
             }
             catch (Exception ex)
             {
@@ -60,11 +59,10 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "UPDATE praticien SET Raison_sociale = " + praticien.Raison_sociale + ", Adresse = " + praticien.Adresse + ", Telephone = " + praticien.Telephone + ", Contact = '$Contact', Coef_notoriete = " + praticien.Coef_notoriete + ", Coef_confiance = " + praticien.Coef_confiance + ", idSpecialite = " + praticien.Spec.NumSpecialite + " WHERE Code = " + praticien.Code + ";";
-                SqlDataReader rs;
+                String req = "UPDATE praticien SET Raison_sociale = '" + praticien.Raison_sociale + "', Adresse = '" + praticien.Adresse + "', Telephone = '" + praticien.Telephone + "', Contact = '" + praticien.Contact + "', Coef_notoriete = " + praticien.Coef_notoriete + ", Coef_confiance = " + praticien.Coef_confiance + ", idSpecialite = " + praticien.IdSpecialite + " WHERE Code = " + praticien.Code + ";";
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
+                db.execSQLread(req);
             }
             catch (Exception ex)
             {

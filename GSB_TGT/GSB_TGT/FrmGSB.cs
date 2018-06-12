@@ -91,7 +91,7 @@ namespace GSB_TGT
             {
                 Praticien p = listPraticiens.ElementAt(i);
                 Specialite s = p.Spec;
-                dgvPraticiens.Rows.Add(p.Contact, p.Raison_sociale, p.Adresse, p.Telephone, p.Coef_notoriete, p.Coef_confiance,  s.NomSpecialite);
+                dgvPraticiens.Rows.Add(p.Code, p.Contact, p.Raison_sociale, p.Adresse, p.Telephone, p.Coef_notoriete, p.Coef_confiance, s.NomSpecialite);
             }
         }
         #endregion
@@ -173,10 +173,6 @@ namespace GSB_TGT
                 cbxProAssociation1.Items.Add(unProduit.Id_produit);
                 cbxProAssociation2.Items.Add(unProduit.Id_produit);
             }
-            
-
-
-
 
         }
 
@@ -234,8 +230,13 @@ namespace GSB_TGT
         #region boutons
         private void btnPraModifier_Click(object sender, EventArgs e)
         {
-           
-        }
+
+            Produit p = new Produit(Int32.Parse(txbProNum.Text), txbProNom.Text, txbProEffet.Text, txbProContreInd.Text, txbProPresentation.Text, txbProDosage.Text, float.Parse(txbProPrix.Text), float.Parse(txbProPrixEchantillon.Text), DAOFamilleMedoc.getIdFamilleFromNomFamille(cbxProFamille.Text));
+            DAOProduit.updateProduit(p);
+            dgvPraticiens.Rows.Clear();
+            actualiserProduit();
+
+         }
 
         private void btnProUpdt_Click(object sender, EventArgs e)
         {
@@ -257,13 +258,14 @@ namespace GSB_TGT
         {
             foreach (DataGridViewRow row in dgvPraticiens.SelectedRows)
             {
-                txbPraContact.Text = row.Cells[0].Value.ToString();
-                txbPraRaisonSoc.Text = row.Cells[1].Value.ToString();
-                txbPraAdresse.Text = row.Cells[2].Value.ToString();
-                txbPraCoeffConf.Text = row.Cells[3].Value.ToString();
-                txbPraCoeffNot.Text = row.Cells[4].Value.ToString();
-                txbPraTelephone.Text = row.Cells[5].Value.ToString();
-                cbxPraSpec.Text = row.Cells[6].Value.ToString();
+                txbPraCode.Text = row.Cells[0].Value.ToString();
+                txbPraContact.Text = row.Cells[1].Value.ToString();
+                txbPraRaisonSoc.Text = row.Cells[2].Value.ToString();
+                txbPraAdresse.Text = row.Cells[3].Value.ToString();
+                txbPraCoeffConf.Text = row.Cells[6].Value.ToString();
+                txbPraCoeffNot.Text = row.Cells[5].Value.ToString();
+                txbPraTelephone.Text = row.Cells[4].Value.ToString();
+                cbxPraSpec.Text = row.Cells[7].Value.ToString();
             }
         }
 
@@ -289,6 +291,11 @@ namespace GSB_TGT
             actualiserPraticien();
         }
 
-        
+        private void btnPraAjouter_Click_1(object sender, EventArgs e)
+        {
+            Praticien p = new Praticien(txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, float.Parse(txbPraCoeffNot.Text), float.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+            DAOPraticien.addPraticien(p);
+            actualiserPraticien();
+        }
     }
 }

@@ -134,6 +134,8 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
+            this.txbPraCode = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -618,6 +620,7 @@
             this.btnPraAjouter.TabIndex = 18;
             this.btnPraAjouter.Text = "Ajouter";
             this.btnPraAjouter.UseVisualStyleBackColor = true;
+            this.btnPraAjouter.Click += new System.EventHandler(this.btnPraAjouter_Click_1);
             // 
             // btnPraAnnuler
             // 
@@ -704,6 +707,8 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.groupBox5.Controls.Add(this.label9);
+            this.groupBox5.Controls.Add(this.txbPraCode);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.txbPraTelephone);
             this.groupBox5.Controls.Add(this.label22);
@@ -1156,6 +1161,23 @@
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
             // 
+            // txbPraCode
+            // 
+            this.txbPraCode.Enabled = false;
+            this.txbPraCode.Location = new System.Drawing.Point(143, 19);
+            this.txbPraCode.Name = "txbPraCode";
+            this.txbPraCode.Size = new System.Drawing.Size(100, 20);
+            this.txbPraCode.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(75, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Code : ";
+            // 
             // FrmGSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1303,6 +1325,8 @@
         private System.Windows.Forms.Button btnProUpdt;
         private System.Windows.Forms.Button btnPraUpdt;
         private System.Windows.Forms.Button btnVisUpdt;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txbPraCode;
     }
 }
 

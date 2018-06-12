@@ -150,6 +150,18 @@ namespace GSB_TGT
         spec = specPra;
         }
 
+        public Praticien(int UnCode, string UneRaison_sociale, string UneAdresse, string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, int UnIdSpecialite)
+        {
+            code = UnCode;
+            raison_sociale = UneRaison_sociale;
+            adresse = UneAdresse;
+            telephone = UnTelephone;
+            contact = UnContact;
+            coef_notoriete = UnCoef_notoriete;
+            coef_confiance = UnCoef_confiance;
+            IdSpecialite = UnIdSpecialite;
+        }
+
         public Praticien(string UneRaison_sociale, string UneAdresse, string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, int UnIdSpecialite)
         {
             raison_sociale = UneRaison_sociale;

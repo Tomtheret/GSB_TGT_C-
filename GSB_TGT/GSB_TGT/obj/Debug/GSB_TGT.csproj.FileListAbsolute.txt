@@ -59,3 +59,13 @@ F:\BTS\Semestre_3\PPE3\GSB_TGT_C-\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.Properties.R
 F:\BTS\Semestre_3\PPE3\GSB_TGT_C-\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.GenerateResource.Cache
 F:\BTS\Semestre_3\PPE3\GSB_TGT_C-\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe
 F:\BTS\Semestre_3\PPE3\GSB_TGT_C-\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.pdb
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe.config
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.exe
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.pdb
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csprojResolveAssemblyReference.cache
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.FrmConnexion.resources
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.FrmGSB.resources
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.Properties.Resources.resources
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\obj\Debug\GSB_TGT.csproj.GenerateResource.Cache
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.exe
+C:\Users\there\Documents\GSB\GSB_TGT\GSB_TGT\bin\Debug\GSB_TGT.pdb
