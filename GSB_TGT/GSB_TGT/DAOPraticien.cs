@@ -62,7 +62,7 @@ namespace GSB_TGT
                 String req = "UPDATE praticien SET Raison_sociale = '" + praticien.Raison_sociale + "', Adresse = '" + praticien.Adresse + "', Telephone = '" + praticien.Telephone + "', Contact = '" + praticien.Contact + "', Coef_notoriete = " + praticien.Coef_notoriete + ", Coef_confiance = " + praticien.Coef_confiance + ", idSpecialite = " + praticien.IdSpecialite + " WHERE Code = " + praticien.Code + ";";
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                db.execSQLread(req);
+                db.execSQLwrite(req);
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace GSB_TGT
                 SqlDataReader rs;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                rs = db.execSQLread(req);
+                db.execSQLwrite(req);
             }
             catch (Exception ex)
             {

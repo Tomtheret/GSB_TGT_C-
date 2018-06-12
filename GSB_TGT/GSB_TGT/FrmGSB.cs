@@ -332,9 +332,10 @@ namespace GSB_TGT
 
         private void btnPraSupprimer_Click(object sender, EventArgs e)
         {
-            Praticien p = new Praticien(Int32.Parse(txbPraCode.Text), txbPraContact.Text, txbPraRaisonSoc.Text, txbPraAdresse.Text, float.Parse(txbPraCoeffConf.Text), float.Parse(txbPraCoeffNot.Text), txbPraTelephone.Text, DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
-            DAOVisiteur.supprimerVisiteur(v);
+            Praticien p = new Praticien(Int32.Parse(txbPraCode.Text), txbPraRaisonSoc.Text,  txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, float.Parse(txbPraCoeffConf.Text), float.Parse(txbPraCoeffNot.Text),  DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+            DAOVisiteur.supprimerVisiteur(p);
             actualiserProduit();
         }
+
     }
 }
