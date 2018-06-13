@@ -141,6 +141,7 @@
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
             this.btnPraActualiser = new System.Windows.Forms.Button();
+            this.btnVisActu = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -878,6 +879,7 @@
             // tabVisiteur
             // 
             this.tabVisiteur.BackColor = System.Drawing.Color.LightGray;
+            this.tabVisiteur.Controls.Add(this.btnVisActu);
             this.tabVisiteur.Controls.Add(this.btnVisUpdt);
             this.tabVisiteur.Controls.Add(this.groupBox12);
             this.tabVisiteur.Controls.Add(this.groupBox11);
@@ -923,6 +925,7 @@
             this.btnVisRechercher.TabIndex = 2;
             this.btnVisRechercher.Text = "Rechercher";
             this.btnVisRechercher.UseVisualStyleBackColor = true;
+            this.btnVisRechercher.Click += new System.EventHandler(this.btnVisRechercher_Click);
             // 
             // label21
             // 
@@ -1234,6 +1237,18 @@
             this.btnPraActualiser.UseVisualStyleBackColor = false;
             this.btnPraActualiser.Click += new System.EventHandler(this.btnPraActualiser_Click);
             // 
+            // btnVisActu
+            // 
+            this.btnVisActu.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnVisActu.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnVisActu.Location = new System.Drawing.Point(667, 406);
+            this.btnVisActu.Name = "btnVisActu";
+            this.btnVisActu.Size = new System.Drawing.Size(39, 25);
+            this.btnVisActu.TabIndex = 24;
+            this.btnVisActu.Text = "Actu";
+            this.btnVisActu.UseVisualStyleBackColor = false;
+            this.btnVisActu.Click += new System.EventHandler(this.btnVisActu_Click);
+            // 
             // FrmGSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1388,6 +1403,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmbauche;
         private System.Windows.Forms.DataGridViewTextBoxColumn secteur;
         private System.Windows.Forms.Button btnPraActualiser;
+        private System.Windows.Forms.Button btnVisActu;
     }
 }
 

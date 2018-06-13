@@ -94,8 +94,7 @@ namespace GSB_TGT
                 dgvPraticiens.Rows.Add(p.Code, p.Contact, p.Raison_sociale, p.Adresse, p.Telephone, p.Coef_notoriete, p.Coef_confiance, s.NomSpecialite);
             }
         }
-
-        public void annulerSaisiPraticien()
+        public void annulerSaisiePraticien()
         {
             txbPraCode.Text = "";
             txbPraContact.Text = "";
@@ -106,7 +105,6 @@ namespace GSB_TGT
             txbPraTelephone.Text = "";
             cbxPraSpec.Text = "";
         }
-
         private void btnPraSupprimer_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Voulez vous supprimer le praticien : " + txbPraContact.Text + " ?", "caption", MessageBoxButtons.YesNo);
@@ -118,16 +116,24 @@ namespace GSB_TGT
             }
             else if (result == DialogResult.No)
             {
-                annulerSaisiPraticien();
+                annulerSaisiePraticien();
             }
 
         }
         private void btnPraModifier_Click(object sender, EventArgs e)
         {
-
-            Praticien pra = new Praticien(Int32.Parse(txbPraCode.Text), txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffNot.Text), Int32.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
-            DAOPraticien.updtPraticien(pra);
-            actualiserPraticien();
+            DialogResult result = MessageBox.Show("Voulez vous modifier le praticien : " + txbPraContact.Text + " ?", "caption", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Praticien pra = new Praticien(Int32.Parse(txbPraCode.Text), txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffNot.Text), Int32.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+                DAOPraticien.updtPraticien(pra);
+                actualiserPraticien();
+            }
+            else if (result == DialogResult.No)
+            {
+                annulerSaisiePraticien();
+            }
+                
 
         }
         private void btnPraUpdt_Click(object sender, EventArgs e)
@@ -146,13 +152,22 @@ namespace GSB_TGT
         }
         private void btnPraAjouter_Click_1(object sender, EventArgs e)
         {
-            Praticien p = new Praticien(txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffNot.Text), Int32.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
-            DAOPraticien.addPraticien(p);
-            actualiserPraticien();
+            DialogResult result = MessageBox.Show("Voulez vous ajouter le praticien : " + txbPraContact.Text + " ?", "caption", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Praticien p = new Praticien(txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffNot.Text), Int32.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+                DAOPraticien.addPraticien(p);
+                actualiserPraticien();
+            }
+            else if(result == DialogResult.No)
+            {
+                annulerSaisiePraticien();
+            }
+                
         }
         private void btnPraAnnuler_Click(object sender, EventArgs e)
         {
-            annulerSaisiPraticien();
+            annulerSaisiePraticien();
         }
         private void btnPraRechercher_Click(object sender, EventArgs e)
         {
@@ -170,7 +185,7 @@ namespace GSB_TGT
         private void btnPraActualiser_Click(object sender, EventArgs e)
         {
             actualiserPraticien();
-            annulerSaisiPraticien();
+            annulerSaisiePraticien();
         }
 
         #endregion
@@ -206,9 +221,9 @@ namespace GSB_TGT
             }
 
         }
-
-        private void btnVisAnnuler_Click(object sender, EventArgs e)
+        public void annulerSaisieVisiteur()
         {
+            txbVisId.Text = "";
             txbVisNom.Text = "";
             txbVisPrenom.Text = "";
             txbVisAdresse.Text = "";
@@ -217,25 +232,74 @@ namespace GSB_TGT
             txbVisDateEmb.Text = "";
             cbxVisSecteur.Text = "";
         }
+        private void btnVisAnnuler_Click(object sender, EventArgs e)
+        {
+            annulerSaisieVisiteur();
+        }
 
         private void btnVisModifier_Click(object sender, EventArgs e)
         {
-            Visiteur vis = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
-            DAOVisiteur.modifVisiteur(vis);
-            actualiserVisiteur();
+            
+            DialogResult result = MessageBox.Show("Voulez vous modifier le Visiteur : " + txbVisNom.Text + " ?", "caption", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Visiteur vis = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
+                DAOVisiteur.modifVisiteur(vis);
+                actualiserVisiteur();
+            }
+            else if (result == DialogResult.No)
+            {
+                annulerSaisiePraticien();
+            }
         }
         private void btnVisAjouter_Click(object sender, EventArgs e)
         {
-            Visiteur v = new Visiteur(txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
-            DAOVisiteur.creerVisiteur(v);
-            actualiserVisiteur();
+            DialogResult result = MessageBox.Show("Voulez vous ajouter le Visiteur : " + txbVisNom.Text + " ?", "caption", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Visiteur v = new Visiteur(txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
+                DAOVisiteur.creerVisiteur(v);
+                actualiserVisiteur();
+            }
+            else if (result == DialogResult.No)
+            {
+                annulerSaisiePraticien();
+            }
         }
 
         private void btnVisSupprimer_Click(object sender, EventArgs e)
         {
-            Visiteur v = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
-            DAOVisiteur.supprimerVisiteur(v);
+            
+            DialogResult result = MessageBox.Show("Voulez vous supprimer le Visiteur : " + txbVisNom.Text + " ?", "caption", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Visiteur v = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
+                DAOVisiteur.supprimerVisiteur(v);
+                actualiserVisiteur();
+            }
+            else if (result == DialogResult.No)
+            {
+                annulerSaisiePraticien();
+            }
+        }
+        private void btnVisActu_Click(object sender, EventArgs e)
+        {
+            annulerSaisieVisiteur();
             actualiserVisiteur();
+        }
+
+        private void btnVisRechercher_Click(object sender, EventArgs e)
+        {
+            listVisiteur = DAOVisiteur.listeRechercheVisiteurs(txbVisRechercher.Text);
+
+            dgvVisiteurs.Rows.Clear();
+
+            for (int i = 0; i < listVisiteur.Count; i++)
+            {
+                Visiteur v = listVisiteur.ElementAt(i);
+                Secteur s = v.SecteurVisiteur;
+                dgvVisiteurs.Rows.Add(v.Id, v.Nom, v.Prenom, v.Adresse, v.Ville, v.Cp, v.DateEmbauche, s.NomSecteur);
+            }
         }
 
         #endregion
@@ -366,12 +430,13 @@ namespace GSB_TGT
             }
         }
 
+
+
+
+
+
+
         #endregion
 
-       
-
-        
-
-      
     }
 }

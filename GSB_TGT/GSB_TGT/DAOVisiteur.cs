@@ -64,6 +64,31 @@ namespace GSB_TGT
             return lesVisiteurs;
         }
 
+        public static List<Visiteur> listeRechercheVisiteurs(string text)
+        {
+            List<Visiteur> lesRecherchesVisiteurs = new List<Visiteur>();
+            try
+            {
+
+                String req = "Select id, nom, prenom, adresse, cp, ville, dateEmbauche, visiteur_medical.idSecteur, nomSecteur From visiteur_medical INNER JOIN secteur ON visiteur_medical.idSecteur = secteur.idSecteur where nom Like '%" + text + "%' OR prenom Like '%" + text + "%'OR adresse Like '%" + text + "%' OR ville Like '%" + text + "%'OR cp Like '%" + text + "%' OR dateEmbauche Like '%" + text + "%' OR nomSecteur Like '%" + text + "%' ;";
+                SqlDataReader dr;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                dr = db.execSQLread(req);
+                while (dr.Read())
+                {
+                    Secteur secteur = new Secteur(Int32.Parse(dr[7].ToString()), dr[8].ToString());
+                    Visiteur vis = new Visiteur(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), secteur);
+                    lesRecherchesVisiteurs.Add(vis);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : " + ex);
+            }
+            return lesRecherchesVisiteurs;
+        }
+
         public static void creerVisiteur(Visiteur visiteur)
         {
             try
