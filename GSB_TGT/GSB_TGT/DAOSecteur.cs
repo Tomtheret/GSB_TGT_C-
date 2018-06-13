@@ -38,7 +38,7 @@ namespace GSB_TGT
             try
             {
 
-                String req = "select nomSecteur from famille where idSecteur ='" + idSecteur + "'";
+                String req = "select nomSecteur from secteur where idSecteur =" + idSecteur + ";";
                 SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
@@ -62,7 +62,7 @@ namespace GSB_TGT
             try
             {
 
-                String req = "select nomSecteur from famille where idSecteur ='" + nomSecteur + "'";
+                String req = "select idSecteur from secteur where nomSecteur ='" + nomSecteur + "'";
                 SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();

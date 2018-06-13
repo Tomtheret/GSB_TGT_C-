@@ -102,14 +102,15 @@ namespace GSB_TGT
         private void actualiserVisiteur()
         {
             listVisiteur = DAOVisiteur.lesVisiteurs();
+            dgvVisiteurs.Rows.Clear();
             /*dgvVisiteurs.DataSource = null;
             dgvVisiteurs.DataSource = listVisiteur;*/
-           
+
             for (int i = 0; i < listVisiteur.Count ; i++)
             {
                 Visiteur v = listVisiteur.ElementAt(i);
                 Secteur s = v.SecteurVisiteur;
-                dgvVisiteurs.Rows.Add(v.Nom,v.Prenom,v.Adresse,v.Ville,v.Cp,v.DateEmbauche,s.NomSecteur);
+                dgvVisiteurs.Rows.Add(v.Id, v.Nom,v.Prenom,v.Adresse,v.Ville,v.Cp,v.DateEmbauche,s.NomSecteur);
             }
 
         }
@@ -296,14 +297,14 @@ namespace GSB_TGT
         {
             foreach (DataGridViewRow row in dgvVisiteurs.SelectedRows)
             {
-                txbVisId.Text = row.Cells[7].Value.ToString();
-                txbVisNom.Text = row.Cells[0].Value.ToString();
-                txbVisPrenom.Text = row.Cells[1].Value.ToString();
-                txbVisAdresse.Text = row.Cells[2].Value.ToString();
-                txbVisVille.Text = row.Cells[3].Value.ToString();
-                txbVisCp.Text = row.Cells[4].Value.ToString();
-                txbVisDateEmb.Text = row.Cells[5].Value.ToString();
-                cbxVisSecteur.Text = row.Cells[6].Value.ToString();
+                txbVisId.Text = row.Cells[0].Value.ToString();
+                txbVisNom.Text = row.Cells[1].Value.ToString();
+                txbVisPrenom.Text = row.Cells[2].Value.ToString();
+                txbVisAdresse.Text = row.Cells[3].Value.ToString();
+                txbVisVille.Text = row.Cells[4].Value.ToString();
+                txbVisCp.Text = row.Cells[5].Value.ToString();
+                txbVisDateEmb.Text = row.Cells[6].Value.ToString();
+                cbxVisSecteur.Text = row.Cells[7].Value.ToString();
             }
 
         }

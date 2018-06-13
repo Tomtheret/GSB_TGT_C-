@@ -48,11 +48,10 @@ namespace GSB_TGT
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 dr = db.execSQLread(req);
-                Visiteur vis = null;
                 while (dr.Read())
                 {
                     Secteur secteur = new Secteur(Int32.Parse(dr[7].ToString()), dr[8].ToString());
-                    vis = new Visiteur(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), secteur);
+                    Visiteur vis = new Visiteur(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), secteur);
                     lesVisiteurs2.Add(vis);
                 }
             }
@@ -67,7 +66,7 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "INSERT INTO Visiteur (nom, prenom, adresse, cp, ville, dateEmbauche, idSecteur)  Values ('" + visiteur + "', '" + visiteur.Prenom
+                String req = "INSERT INTO visiteur_medical (nom, prenom, adresse, cp, ville, dateEmbauche, idSecteur)  Values ('" + visiteur + "', '" + visiteur.Prenom
                     + "','" + visiteur.Adresse + "','" + visiteur.Cp + "','" + visiteur.Ville + "','" + visiteur.DateEmbauche + "', '" + visiteur.SecteurVisiteur.IdSecteur + "')";
                 DAOFactory db = new DAOFactory();
                 db.connexion();
@@ -83,9 +82,8 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "UPDATE Visiteur SET nom = '" + visiteur.Nom + "', prenom = '" + visiteur.Prenom
-                    + "', adresse = '" + visiteur.Adresse + "', cp = '" + visiteur.Cp + "', ville = '" + visiteur.Ville + "', dateEmbauche = '" + visiteur.DateEmbauche + "', idSecteur = '" + (visiteur.SecteurVisiteur).IdSecteur + "'"
-                    + " WHERE id =" + visiteur.Id;
+                String req = "UPDATE visiteur_medical SET nom = '" + visiteur.Nom + "', prenom = '" + visiteur.Prenom
+                    + "', adresse = '" + visiteur.Adresse + "', cp = '" + visiteur.Cp + "', ville = '" + visiteur.Ville + "', dateEmbauche = '" + visiteur.DateEmbauche + "', idSecteur = " + visiteur.IdSecteur + " WHERE id =" + visiteur.Id +";";
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 db.execSQLwrite(req);
@@ -101,7 +99,7 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "Delete FROM Visiteur WHERE idVisiteur =" + visiteur.Id;
+                String req = "Delete FROM visiteur_medical WHERE idVisiteur =" + visiteur.Id;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 db.execSQLwrite(req);

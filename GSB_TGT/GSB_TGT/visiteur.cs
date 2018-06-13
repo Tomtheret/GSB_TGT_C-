@@ -41,7 +41,7 @@ namespace GSB_TGT
             this.Cp = cpVisiteur;
             this.Ville = villeVisiteur;
             this.DateEmbauche = dateEmbaucheVisiteur;
-            this.idSecteur = UnIdSecteur;
+            this.IdSecteur = UnIdSecteur;
         }
 
         public Visiteur(string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur, int UnIdSecteur)
@@ -52,7 +52,7 @@ namespace GSB_TGT
             this.Cp = cpVisiteur;
             this.Ville = villeVisiteur;
             this.DateEmbauche = dateEmbaucheVisiteur;
-            this.idSecteur = UnIdSecteur;
+            this.IdSecteur = UnIdSecteur;
         }
 
         #region acceseurs 
@@ -158,6 +158,19 @@ namespace GSB_TGT
             set
             {
                 id = value;
+            }
+        }
+
+        public int IdSecteur
+        {
+            get
+            {
+                return idSecteur;
+            }
+
+            set
+            {
+                idSecteur = value;
             }
         }
 

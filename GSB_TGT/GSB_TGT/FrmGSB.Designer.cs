@@ -77,6 +77,14 @@
             this.btnPraSupprimer = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvPraticiens = new System.Windows.Forms.DataGridView();
+            this.CodePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raisonSoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefNot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txbPraCode = new System.Windows.Forms.TextBox();
@@ -107,15 +115,10 @@
             this.btnVisSupprimer = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.dgvVisiteurs = new System.Windows.Forms.DataGridView();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEmbauche = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.secteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.txbVisId = new System.Windows.Forms.TextBox();
             this.txbVisDateEmb = new System.Windows.Forms.TextBox();
             this.cbxVisSecteur = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -129,16 +132,14 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
-            this.CodePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.raisonSoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coefNot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coefConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txbVisId = new System.Windows.Forms.TextBox();
+            this.idVis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEmbauche = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -675,6 +676,46 @@
             this.dgvPraticiens.Size = new System.Drawing.Size(641, 264);
             this.dgvPraticiens.TabIndex = 0;
             // 
+            // CodePra
+            // 
+            this.CodePra.HeaderText = "Code";
+            this.CodePra.Name = "CodePra";
+            // 
+            // contact
+            // 
+            this.contact.HeaderText = "Contact";
+            this.contact.Name = "contact";
+            // 
+            // raisonSoc
+            // 
+            this.raisonSoc.HeaderText = "Raison Sociale";
+            this.raisonSoc.Name = "raisonSoc";
+            // 
+            // adressePra
+            // 
+            this.adressePra.HeaderText = "Adresse";
+            this.adressePra.Name = "adressePra";
+            // 
+            // telephone
+            // 
+            this.telephone.HeaderText = "Téléphone";
+            this.telephone.Name = "telephone";
+            // 
+            // coefNot
+            // 
+            this.coefNot.HeaderText = "Coefficient Notoriété";
+            this.coefNot.Name = "coefNot";
+            // 
+            // coefConf
+            // 
+            this.coefConf.HeaderText = "Coefficient Confiance";
+            this.coefConf.Name = "coefConf";
+            // 
+            // specialite
+            // 
+            this.specialite.HeaderText = "Spécialité";
+            this.specialite.Name = "specialite";
+            // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -969,6 +1010,7 @@
             this.dgvVisiteurs.BackgroundColor = System.Drawing.Color.White;
             this.dgvVisiteurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisiteurs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idVis,
             this.nom,
             this.prenom,
             this.adresse,
@@ -980,41 +1022,6 @@
             this.dgvVisiteurs.Name = "dgvVisiteurs";
             this.dgvVisiteurs.Size = new System.Drawing.Size(641, 264);
             this.dgvVisiteurs.TabIndex = 0;
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nom";
-            this.nom.Name = "nom";
-            // 
-            // prenom
-            // 
-            this.prenom.HeaderText = "Prénom";
-            this.prenom.Name = "prenom";
-            // 
-            // adresse
-            // 
-            this.adresse.HeaderText = "Adresse";
-            this.adresse.Name = "adresse";
-            // 
-            // cp
-            // 
-            this.cp.HeaderText = "Code Postal";
-            this.cp.Name = "cp";
-            // 
-            // ville
-            // 
-            this.ville.HeaderText = "Ville";
-            this.ville.Name = "ville";
-            // 
-            // dateEmbauche
-            // 
-            this.dateEmbauche.HeaderText = "Date d\'embauche";
-            this.dateEmbauche.Name = "dateEmbauche";
-            // 
-            // secteur
-            // 
-            this.secteur.HeaderText = "Secteur";
-            this.secteur.Name = "secteur";
             // 
             // groupBox6
             // 
@@ -1042,6 +1049,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Saisi des données";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(84, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Id : ";
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -1050,6 +1066,13 @@
             this.label23.Size = new System.Drawing.Size(100, 13);
             this.label23.TabIndex = 14;
             this.label23.Text = "Date d\'embauche : ";
+            // 
+            // txbVisId
+            // 
+            this.txbVisId.Location = new System.Drawing.Point(143, 19);
+            this.txbVisId.Name = "txbVisId";
+            this.txbVisId.Size = new System.Drawing.Size(100, 20);
+            this.txbVisId.TabIndex = 22;
             // 
             // txbVisDateEmb
             // 
@@ -1155,61 +1178,45 @@
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
             // 
-            // CodePra
+            // idVis
             // 
-            this.CodePra.HeaderText = "Code";
-            this.CodePra.Name = "CodePra";
+            this.idVis.HeaderText = "Id";
+            this.idVis.Name = "idVis";
             // 
-            // contact
+            // nom
             // 
-            this.contact.HeaderText = "Contact";
-            this.contact.Name = "contact";
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
             // 
-            // raisonSoc
+            // prenom
             // 
-            this.raisonSoc.HeaderText = "Raison Sociale";
-            this.raisonSoc.Name = "raisonSoc";
+            this.prenom.HeaderText = "Prénom";
+            this.prenom.Name = "prenom";
             // 
-            // adressePra
+            // adresse
             // 
-            this.adressePra.HeaderText = "Adresse";
-            this.adressePra.Name = "adressePra";
+            this.adresse.HeaderText = "Adresse";
+            this.adresse.Name = "adresse";
             // 
-            // telephone
+            // cp
             // 
-            this.telephone.HeaderText = "Téléphone";
-            this.telephone.Name = "telephone";
+            this.cp.HeaderText = "Code Postal";
+            this.cp.Name = "cp";
             // 
-            // coefNot
+            // ville
             // 
-            this.coefNot.HeaderText = "Coefficient Notoriété";
-            this.coefNot.Name = "coefNot";
+            this.ville.HeaderText = "Ville";
+            this.ville.Name = "ville";
             // 
-            // coefConf
+            // dateEmbauche
             // 
-            this.coefConf.HeaderText = "Coefficient Confiance";
-            this.coefConf.Name = "coefConf";
+            this.dateEmbauche.HeaderText = "Date d\'embauche";
+            this.dateEmbauche.Name = "dateEmbauche";
             // 
-            // specialite
+            // secteur
             // 
-            this.specialite.HeaderText = "Spécialité";
-            this.specialite.Name = "specialite";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(84, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Id : ";
-            // 
-            // txbVisId
-            // 
-            this.txbVisId.Location = new System.Drawing.Point(143, 19);
-            this.txbVisId.Name = "txbVisId";
-            this.txbVisId.Size = new System.Drawing.Size(100, 20);
-            this.txbVisId.TabIndex = 22;
+            this.secteur.HeaderText = "Secteur";
+            this.secteur.Name = "secteur";
             // 
             // FrmGSB
             // 
@@ -1341,13 +1348,6 @@
         private System.Windows.Forms.Button btnVisRechercher;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txbVisRechercher;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ville;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateEmbauche;
-        private System.Windows.Forms.DataGridViewTextBoxColumn secteur;
         private System.Windows.Forms.Button btnProUpdt;
         private System.Windows.Forms.Button btnPraUpdt;
         private System.Windows.Forms.Button btnVisUpdt;
@@ -1363,6 +1363,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn specialite;
         private System.Windows.Forms.TextBox txbVisId;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ville;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateEmbauche;
+        private System.Windows.Forms.DataGridViewTextBoxColumn secteur;
     }
 }
 
