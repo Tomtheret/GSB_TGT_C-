@@ -180,7 +180,7 @@ namespace GSB_TGT
 
         public static Visiteur getVisiteurByNom(string nom)
         {
-            List<Visiteur> lesVisiteurs = DAOVisiteur.lesVisiteurs();
+            List<Visiteur> lesVisiteurs = DAOVisiteur.listeVisiteurs();
             int i = 0;
             bool found = false;
             while (!found && i < lesVisiteurs.Count)
@@ -203,7 +203,7 @@ namespace GSB_TGT
 
         public static Visiteur getVisiteurByNum(int id)
         {
-            List<Visiteur> lesVisiteurs = DAOVisiteur.lesVisiteurs();
+            List<Visiteur> lesVisiteurs = DAOVisiteur.listeVisiteurs();
             int i = 0;
             bool found = false;
             while (!found && i < lesVisiteurs.Count)

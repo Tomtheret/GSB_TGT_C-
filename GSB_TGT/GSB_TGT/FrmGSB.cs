@@ -84,9 +84,8 @@ namespace GSB_TGT
         private void actualiserPraticien()
         {
             listPraticiens = DAOPraticien.listePraticien();
+
             dgvPraticiens.Rows.Clear();
-            /*dgvPraticiens.DataSource = null;
-            dgvPraticiens.DataSource = listPraticiens;*/
 
             for (int i = 0; i < listPraticiens.Count; i++)
             {
@@ -101,10 +100,9 @@ namespace GSB_TGT
 
         private void actualiserVisiteur()
         {
-            listVisiteur = DAOVisiteur.lesVisiteurs();
+            listVisiteur = DAOVisiteur.listeVisiteurs();
+
             dgvVisiteurs.Rows.Clear();
-            /*dgvVisiteurs.DataSource = null;
-            dgvVisiteurs.DataSource = listVisiteur;*/
 
             for (int i = 0; i < listVisiteur.Count ; i++)
             {
@@ -322,13 +320,13 @@ namespace GSB_TGT
 
         private void btnVisModifier_Click(object sender, EventArgs e)
         {
-            Visiteur v = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
-            DAOVisiteur.modifVisiteur(v);
+            Visiteur vis = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
+            DAOVisiteur.modifVisiteur(vis);
             actualiserVisiteur();
         }
         private void btnVisAjouter_Click(object sender, EventArgs e)
         {
-            Visiteur v = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
+            Visiteur v = new Visiteur(txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
             DAOVisiteur.creerVisiteur(v);
             actualiserVisiteur();
         }

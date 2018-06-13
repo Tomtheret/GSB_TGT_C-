@@ -1069,6 +1069,7 @@
             // 
             // txbVisId
             // 
+            this.txbVisId.Enabled = false;
             this.txbVisId.Location = new System.Drawing.Point(143, 19);
             this.txbVisId.Name = "txbVisId";
             this.txbVisId.Size = new System.Drawing.Size(100, 20);

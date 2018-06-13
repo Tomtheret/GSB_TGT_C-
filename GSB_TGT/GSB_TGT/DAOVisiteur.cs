@@ -15,7 +15,7 @@ namespace GSB_TGT
 
         }
 
-        public static List<Visiteur> lesVisiteurs2 = new List<Visiteur>();
+
 
         public static List<Secteur> getSecteurVisiteur()
         {
@@ -39,10 +39,12 @@ namespace GSB_TGT
             return Localisation;
         }
 
-        public static List<Visiteur> lesVisiteurs()
+        public static List<Visiteur> listeVisiteurs()
         {
+            List<Visiteur> lesVisiteurs = new List<Visiteur>();
             try
             {
+                
                 String req = "Select id, nom, prenom, adresse, cp, ville, dateEmbauche, visiteur_medical.idSecteur, nomSecteur From visiteur_medical INNER JOIN secteur ON visiteur_medical.idSecteur = secteur.idSecteur";
                 SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
@@ -52,25 +54,26 @@ namespace GSB_TGT
                 {
                     Secteur secteur = new Secteur(Int32.Parse(dr[7].ToString()), dr[8].ToString());
                     Visiteur vis = new Visiteur(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), secteur);
-                    lesVisiteurs2.Add(vis);
+                    lesVisiteurs.Add(vis);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERREUR : " + ex);
             }
-            return lesVisiteurs2;
+            return lesVisiteurs;
         }
 
         public static void creerVisiteur(Visiteur visiteur)
         {
             try
             {
-                String req = "INSERT INTO visiteur_medical (nom, prenom, adresse, cp, ville, dateEmbauche, idSecteur)  Values ('" + visiteur + "', '" + visiteur.Prenom
-                    + "','" + visiteur.Adresse + "','" + visiteur.Cp + "','" + visiteur.Ville + "','" + visiteur.DateEmbauche + "', '" + visiteur.SecteurVisiteur.IdSecteur + "')";
+                String req = "INSERT INTO visiteur_medical (nom, prenom, adresse, cp, ville, dateEmbauche, idSecteur)  Values ('" + visiteur.Nom + "', '" + visiteur.Prenom
+                    + "','" + visiteur.Adresse + "','" + visiteur.Cp + "','" + visiteur.Ville + "','" + visiteur.DateEmbauche + "', " + visiteur.IdSecteur + ")";
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 db.execSQLwrite(req);
+                db.deconnexion();
             }
             catch (Exception ex)
             {
@@ -87,6 +90,7 @@ namespace GSB_TGT
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 db.execSQLwrite(req);
+                db.deconnexion();
             }
             catch (Exception ex)
             {
@@ -99,10 +103,11 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "Delete FROM visiteur_medical WHERE idVisiteur =" + visiteur.Id;
+                String req = "Delete FROM visiteur_medical WHERE id =" + visiteur.Id + ";";
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 db.execSQLwrite(req);
+                db.deconnexion();
             }
             catch (Exception ex)
             {
