@@ -16,8 +16,8 @@ namespace GSB_TGT
         private string adresse;
         private string telephone;
         private string contact;
-        private float coef_notoriete;
-        private float coef_confiance;
+        private int coef_notoriete;
+        private int coef_confiance;
         private int idSpecialite;
         private Specialite spec;
 
@@ -86,7 +86,7 @@ namespace GSB_TGT
             }
         }
 
-        public float Coef_notoriete
+        public int Coef_notoriete
         {
             get
             {
@@ -99,7 +99,7 @@ namespace GSB_TGT
             }
         }
 
-        public float Coef_confiance
+        public int Coef_confiance
         {
             get
             {
@@ -138,7 +138,7 @@ namespace GSB_TGT
             }
         }
 
-        public Praticien(int UnCode, string UneRaison_sociale, string UneAdresse,string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, Specialite specPra)
+        public Praticien(int UnCode, string UneRaison_sociale, string UneAdresse,string UnTelephone, string UnContact, int UnCoef_notoriete, int UnCoef_confiance, Specialite specPra)
         {
         code = UnCode;
         raison_sociale = UneRaison_sociale;
@@ -150,7 +150,7 @@ namespace GSB_TGT
         spec = specPra;
         }
 
-        public Praticien(int UnCode, string UneRaison_sociale, string UneAdresse, string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, int UnIdSpecialite)
+        public Praticien(int UnCode, string UneRaison_sociale, string UneAdresse, string UnTelephone, string UnContact, int UnCoef_notoriete, int UnCoef_confiance, int UnIdSpecialite)
         {
             code = UnCode;
             raison_sociale = UneRaison_sociale;
@@ -162,7 +162,7 @@ namespace GSB_TGT
             IdSpecialite = UnIdSpecialite;
         }
 
-        public Praticien(string UneRaison_sociale, string UneAdresse, string UnTelephone, string UnContact, float UnCoef_notoriete, float UnCoef_confiance, int UnIdSpecialite)
+        public Praticien(string UneRaison_sociale, string UneAdresse, string UnTelephone, string UnContact, int UnCoef_notoriete, int UnCoef_confiance, int UnIdSpecialite)
         {
             raison_sociale = UneRaison_sociale;
             adresse = UneAdresse;

@@ -27,7 +27,7 @@ namespace GSB_TGT
                 while (dr.Read())
                 {
                     Specialite specialite = new Specialite (Int32.Parse(dr[7].ToString()), dr[8].ToString());
-                    Praticien pra = new Praticien(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), float.Parse(dr[5].ToString()), float.Parse(dr[6].ToString()), specialite);
+                    Praticien pra = new Praticien(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), Int32.Parse(dr[5].ToString()), Int32.Parse(dr[6].ToString()), specialite);
                     lesPraticiens.Add(pra);
                 }
 
@@ -48,6 +48,7 @@ namespace GSB_TGT
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 db.execSQLwrite(req);
+                db.deconnexion();
             }
             catch (Exception ex)
             {
@@ -63,6 +64,7 @@ namespace GSB_TGT
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 db.execSQLwrite(req);
+                db.deconnexion();
             }
             catch (Exception ex)
             {
@@ -75,8 +77,7 @@ namespace GSB_TGT
         {
             try
             {
-                String req = "Delete FROM Praticien WHERE code =" + praticien.Code;
-                SqlDataReader rs;
+                String req = "Delete FROM Praticien WHERE code ='" + praticien.Code + "';";
                 DAOFactory db = new DAOFactory();
                 db.connexion();
                 db.execSQLwrite(req);

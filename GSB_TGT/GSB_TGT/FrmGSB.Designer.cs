@@ -77,13 +77,6 @@
             this.btnPraSupprimer = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvPraticiens = new System.Windows.Forms.DataGridView();
-            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.raisonSoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coefNot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coefConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txbPraCode = new System.Windows.Forms.TextBox();
@@ -136,6 +129,16 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
+            this.CodePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raisonSoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressePra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefNot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefConf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specialite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txbVisId = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -659,6 +662,7 @@
             this.dgvPraticiens.BackgroundColor = System.Drawing.Color.White;
             this.dgvPraticiens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPraticiens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodePra,
             this.contact,
             this.raisonSoc,
             this.adressePra,
@@ -670,41 +674,6 @@
             this.dgvPraticiens.Name = "dgvPraticiens";
             this.dgvPraticiens.Size = new System.Drawing.Size(641, 264);
             this.dgvPraticiens.TabIndex = 0;
-            // 
-            // contact
-            // 
-            this.contact.HeaderText = "Contact";
-            this.contact.Name = "contact";
-            // 
-            // raisonSoc
-            // 
-            this.raisonSoc.HeaderText = "Raison Sociale";
-            this.raisonSoc.Name = "raisonSoc";
-            // 
-            // adressePra
-            // 
-            this.adressePra.HeaderText = "Adresse";
-            this.adressePra.Name = "adressePra";
-            // 
-            // telephone
-            // 
-            this.telephone.HeaderText = "Téléphone";
-            this.telephone.Name = "telephone";
-            // 
-            // coefNot
-            // 
-            this.coefNot.HeaderText = "Coefficient Notoriété";
-            this.coefNot.Name = "coefNot";
-            // 
-            // coefConf
-            // 
-            this.coefConf.HeaderText = "Coefficient Confiance";
-            this.coefConf.Name = "coefConf";
-            // 
-            // specialite
-            // 
-            this.specialite.HeaderText = "Spécialité";
-            this.specialite.Name = "specialite";
             // 
             // groupBox5
             // 
@@ -950,6 +919,7 @@
             this.btnVisModifier.TabIndex = 19;
             this.btnVisModifier.Text = "Modifier";
             this.btnVisModifier.UseVisualStyleBackColor = true;
+            this.btnVisModifier.Click += new System.EventHandler(this.btnVisModifier_Click);
             // 
             // btnVisAjouter
             // 
@@ -960,6 +930,7 @@
             this.btnVisAjouter.TabIndex = 18;
             this.btnVisAjouter.Text = "Ajouter";
             this.btnVisAjouter.UseVisualStyleBackColor = true;
+            this.btnVisAjouter.Click += new System.EventHandler(this.btnVisAjouter_Click);
             // 
             // btnVisAnnuler
             // 
@@ -1048,7 +1019,9 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.label23);
+            this.groupBox6.Controls.Add(this.txbVisId);
             this.groupBox6.Controls.Add(this.txbVisDateEmb);
             this.groupBox6.Controls.Add(this.cbxVisSecteur);
             this.groupBox6.Controls.Add(this.label14);
@@ -1088,7 +1061,7 @@
             // cbxVisSecteur
             // 
             this.cbxVisSecteur.FormattingEnabled = true;
-            this.cbxVisSecteur.Location = new System.Drawing.Point(566, 19);
+            this.cbxVisSecteur.Location = new System.Drawing.Point(824, 18);
             this.cbxVisSecteur.Name = "cbxVisSecteur";
             this.cbxVisSecteur.Size = new System.Drawing.Size(140, 21);
             this.cbxVisSecteur.TabIndex = 12;
@@ -1105,7 +1078,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(84, 26);
+            this.label15.Location = new System.Drawing.Point(288, 25);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 13);
             this.label15.TabIndex = 10;
@@ -1114,7 +1087,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(507, 22);
+            this.label16.Location = new System.Drawing.Point(748, 22);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 13);
             this.label16.TabIndex = 9;
@@ -1123,7 +1096,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(323, 22);
+            this.label17.Location = new System.Drawing.Point(525, 25);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 13);
             this.label17.TabIndex = 8;
@@ -1170,17 +1143,73 @@
             // 
             // txbVisNom
             // 
-            this.txbVisNom.Location = new System.Drawing.Point(367, 19);
+            this.txbVisNom.Location = new System.Drawing.Point(566, 22);
             this.txbVisNom.Name = "txbVisNom";
             this.txbVisNom.Size = new System.Drawing.Size(100, 20);
             this.txbVisNom.TabIndex = 1;
             // 
             // txbVisPrenom
             // 
-            this.txbVisPrenom.Location = new System.Drawing.Point(143, 19);
+            this.txbVisPrenom.Location = new System.Drawing.Point(367, 22);
             this.txbVisPrenom.Name = "txbVisPrenom";
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
+            // 
+            // CodePra
+            // 
+            this.CodePra.HeaderText = "Code";
+            this.CodePra.Name = "CodePra";
+            // 
+            // contact
+            // 
+            this.contact.HeaderText = "Contact";
+            this.contact.Name = "contact";
+            // 
+            // raisonSoc
+            // 
+            this.raisonSoc.HeaderText = "Raison Sociale";
+            this.raisonSoc.Name = "raisonSoc";
+            // 
+            // adressePra
+            // 
+            this.adressePra.HeaderText = "Adresse";
+            this.adressePra.Name = "adressePra";
+            // 
+            // telephone
+            // 
+            this.telephone.HeaderText = "Téléphone";
+            this.telephone.Name = "telephone";
+            // 
+            // coefNot
+            // 
+            this.coefNot.HeaderText = "Coefficient Notoriété";
+            this.coefNot.Name = "coefNot";
+            // 
+            // coefConf
+            // 
+            this.coefConf.HeaderText = "Coefficient Confiance";
+            this.coefConf.Name = "coefConf";
+            // 
+            // specialite
+            // 
+            this.specialite.HeaderText = "Spécialité";
+            this.specialite.Name = "specialite";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(84, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Id : ";
+            // 
+            // txbVisId
+            // 
+            this.txbVisId.Location = new System.Drawing.Point(143, 19);
+            this.txbVisId.Name = "txbVisId";
+            this.txbVisId.Size = new System.Drawing.Size(100, 20);
+            this.txbVisId.TabIndex = 22;
             // 
             // FrmGSB
             // 
@@ -1319,6 +1348,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ville;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmbauche;
         private System.Windows.Forms.DataGridViewTextBoxColumn secteur;
+        private System.Windows.Forms.Button btnProUpdt;
+        private System.Windows.Forms.Button btnPraUpdt;
+        private System.Windows.Forms.Button btnVisUpdt;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txbPraCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodePra;
         private System.Windows.Forms.DataGridViewTextBoxColumn contact;
         private System.Windows.Forms.DataGridViewTextBoxColumn raisonSoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressePra;
@@ -1326,11 +1361,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coefNot;
         private System.Windows.Forms.DataGridViewTextBoxColumn coefConf;
         private System.Windows.Forms.DataGridViewTextBoxColumn specialite;
-        private System.Windows.Forms.Button btnProUpdt;
-        private System.Windows.Forms.Button btnPraUpdt;
-        private System.Windows.Forms.Button btnVisUpdt;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txbPraCode;
+        private System.Windows.Forms.TextBox txbVisId;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -63,16 +63,15 @@ namespace GSB_TGT
             return lesVisiteurs2;
         }
 
-        public void creerVisiteur(Visiteur visiteur)
+        public static void creerVisiteur(Visiteur visiteur)
         {
             try
             {
                 String req = "INSERT INTO Visiteur (nom, prenom, adresse, cp, ville, dateEmbauche, idSecteur)  Values ('" + visiteur + "', '" + visiteur.Prenom
                     + "','" + visiteur.Adresse + "','" + visiteur.Cp + "','" + visiteur.Ville + "','" + visiteur.DateEmbauche + "', '" + visiteur.SecteurVisiteur.IdSecteur + "')";
-                SqlDataReader dr;
                 DAOFactory db = new DAOFactory();
                 db.connexion();
-                dr = db.execSQLread(req);
+                db.execSQLwrite(req);
             }
             catch (Exception ex)
             {

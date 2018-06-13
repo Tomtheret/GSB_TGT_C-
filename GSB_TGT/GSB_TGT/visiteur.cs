@@ -17,6 +17,7 @@ namespace GSB_TGT
         private string cp;
         private string ville;
         private string dateEmbauche;
+        private int idSecteur;
         private Secteur secteurVisiteur;
 
         public Visiteur(int idVisiteur, string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur, Secteur secteurVisiteur)
@@ -29,6 +30,29 @@ namespace GSB_TGT
             this.Ville = villeVisiteur;
             this.DateEmbauche = dateEmbaucheVisiteur;
             this.SecteurVisiteur = secteurVisiteur;
+        }
+
+        public Visiteur(int idVisiteur, string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur, int UnIdSecteur)
+        {
+            this.Id = idVisiteur;
+            this.Nom = nomVisiteur;
+            this.Prenom = prenomVisiteur;
+            this.Adresse = adresse;
+            this.Cp = cpVisiteur;
+            this.Ville = villeVisiteur;
+            this.DateEmbauche = dateEmbaucheVisiteur;
+            this.idSecteur = UnIdSecteur;
+        }
+
+        public Visiteur(string nomVisiteur, string prenomVisiteur, string adresse, string cpVisiteur, string villeVisiteur, string dateEmbaucheVisiteur, int UnIdSecteur)
+        {
+            this.Nom = nomVisiteur;
+            this.Prenom = prenomVisiteur;
+            this.Adresse = adresse;
+            this.Cp = cpVisiteur;
+            this.Ville = villeVisiteur;
+            this.DateEmbauche = dateEmbaucheVisiteur;
+            this.idSecteur = UnIdSecteur;
         }
 
         #region acceseurs 
