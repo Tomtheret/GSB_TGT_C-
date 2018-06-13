@@ -94,6 +94,85 @@ namespace GSB_TGT
                 dgvPraticiens.Rows.Add(p.Code, p.Contact, p.Raison_sociale, p.Adresse, p.Telephone, p.Coef_notoriete, p.Coef_confiance, s.NomSpecialite);
             }
         }
+
+        public void annulerSaisiPraticien()
+        {
+            txbPraCode.Text = "";
+            txbPraContact.Text = "";
+            txbPraRaisonSoc.Text = "";
+            txbPraAdresse.Text = "";
+            txbPraCoeffConf.Text = "";
+            txbPraCoeffNot.Text = "";
+            txbPraTelephone.Text = "";
+            cbxPraSpec.Text = "";
+        }
+
+        private void btnPraSupprimer_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Voulez vous supprimer le praticien : " + txbPraContact.Text + " ?", "caption", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Praticien pra = new Praticien(Int32.Parse(txbPraCode.Text), txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffConf.Text), Int32.Parse(txbPraCoeffNot.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+                DAOPraticien.delPraticien(pra);
+                actualiserPraticien();
+            }
+            else if (result == DialogResult.No)
+            {
+                annulerSaisiPraticien();
+            }
+
+        }
+        private void btnPraModifier_Click(object sender, EventArgs e)
+        {
+
+            Praticien pra = new Praticien(Int32.Parse(txbPraCode.Text), txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffNot.Text), Int32.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+            DAOPraticien.updtPraticien(pra);
+            actualiserPraticien();
+
+        }
+        private void btnPraUpdt_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvPraticiens.SelectedRows)
+            {
+                txbPraCode.Text = row.Cells[0].Value.ToString();
+                txbPraContact.Text = row.Cells[1].Value.ToString();
+                txbPraRaisonSoc.Text = row.Cells[2].Value.ToString();
+                txbPraAdresse.Text = row.Cells[3].Value.ToString();
+                txbPraCoeffConf.Text = row.Cells[6].Value.ToString();
+                txbPraCoeffNot.Text = row.Cells[5].Value.ToString();
+                txbPraTelephone.Text = row.Cells[4].Value.ToString();
+                cbxPraSpec.Text = row.Cells[7].Value.ToString();
+            }
+        }
+        private void btnPraAjouter_Click_1(object sender, EventArgs e)
+        {
+            Praticien p = new Praticien(txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffNot.Text), Int32.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
+            DAOPraticien.addPraticien(p);
+            actualiserPraticien();
+        }
+        private void btnPraAnnuler_Click(object sender, EventArgs e)
+        {
+            annulerSaisiPraticien();
+        }
+        private void btnPraRechercher_Click(object sender, EventArgs e)
+        {
+            listPraticiens = DAOPraticien.ListePraticiensRecherche(txbPraRechercher.Text);
+
+            dgvPraticiens.Rows.Clear();
+
+            for (int i = 0; i < listPraticiens.Count; i++)
+            {
+                Praticien p = listPraticiens.ElementAt(i);
+                Specialite s = p.Spec;
+                dgvPraticiens.Rows.Add(p.Code, p.Contact, p.Raison_sociale, p.Adresse, p.Telephone, p.Coef_notoriete, p.Coef_confiance, s.NomSpecialite);
+            }
+        }
+        private void btnPraActualiser_Click(object sender, EventArgs e)
+        {
+            actualiserPraticien();
+            annulerSaisiPraticien();
+        }
+
         #endregion
 
         #region Visiteurs
@@ -111,6 +190,52 @@ namespace GSB_TGT
                 dgvVisiteurs.Rows.Add(v.Id, v.Nom,v.Prenom,v.Adresse,v.Ville,v.Cp,v.DateEmbauche,s.NomSecteur);
             }
 
+        }
+        private void btnVisUpdt_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvVisiteurs.SelectedRows)
+            {
+                txbVisId.Text = row.Cells[0].Value.ToString();
+                txbVisNom.Text = row.Cells[1].Value.ToString();
+                txbVisPrenom.Text = row.Cells[2].Value.ToString();
+                txbVisAdresse.Text = row.Cells[3].Value.ToString();
+                txbVisVille.Text = row.Cells[4].Value.ToString();
+                txbVisCp.Text = row.Cells[5].Value.ToString();
+                txbVisDateEmb.Text = row.Cells[6].Value.ToString();
+                cbxVisSecteur.Text = row.Cells[7].Value.ToString();
+            }
+
+        }
+
+        private void btnVisAnnuler_Click(object sender, EventArgs e)
+        {
+            txbVisNom.Text = "";
+            txbVisPrenom.Text = "";
+            txbVisAdresse.Text = "";
+            txbVisVille.Text = "";
+            txbVisCp.Text = "";
+            txbVisDateEmb.Text = "";
+            cbxVisSecteur.Text = "";
+        }
+
+        private void btnVisModifier_Click(object sender, EventArgs e)
+        {
+            Visiteur vis = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
+            DAOVisiteur.modifVisiteur(vis);
+            actualiserVisiteur();
+        }
+        private void btnVisAjouter_Click(object sender, EventArgs e)
+        {
+            Visiteur v = new Visiteur(txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
+            DAOVisiteur.creerVisiteur(v);
+            actualiserVisiteur();
+        }
+
+        private void btnVisSupprimer_Click(object sender, EventArgs e)
+        {
+            Visiteur v = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
+            DAOVisiteur.supprimerVisiteur(v);
+            actualiserVisiteur();
         }
 
         #endregion
@@ -225,18 +350,6 @@ namespace GSB_TGT
             DAOInteractions.supprInteraction(inter1, inter2);
             actualiserProduit();
         }
-        #endregion
-
-        #region boutons
-        private void btnPraModifier_Click(object sender, EventArgs e)
-        {
-
-            Praticien pra = new Praticien(Int32.Parse(txbPraCode.Text), txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffNot.Text), Int32.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
-            DAOPraticien.updtPraticien(pra);
-            actualiserPraticien();
-
-        }
-
         private void btnProUpdt_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvMedicaments.SelectedRows)
@@ -253,115 +366,12 @@ namespace GSB_TGT
             }
         }
 
-        private void btnPraUpdt_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dgvPraticiens.SelectedRows)
-            {
-                txbPraCode.Text = row.Cells[0].Value.ToString();
-                txbPraContact.Text = row.Cells[1].Value.ToString();
-                txbPraRaisonSoc.Text = row.Cells[2].Value.ToString();
-                txbPraAdresse.Text = row.Cells[3].Value.ToString();
-                txbPraCoeffConf.Text = row.Cells[6].Value.ToString();
-                txbPraCoeffNot.Text = row.Cells[5].Value.ToString();
-                txbPraTelephone.Text = row.Cells[4].Value.ToString();
-                cbxPraSpec.Text = row.Cells[7].Value.ToString();
-            }
-        }
-
-
-
-        private void btnPraAjouter_Click_1(object sender, EventArgs e)
-        {
-            Praticien p = new Praticien(txbPraRaisonSoc.Text, txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffNot.Text), Int32.Parse(txbPraCoeffConf.Text), DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
-            DAOPraticien.addPraticien(p);
-            actualiserPraticien();
-        }
-
-        private void btnPraAnnuler_Click(object sender, EventArgs e)
-        {
-            txbPraCode.Text = "";
-            txbPraContact.Text = "";
-            txbPraRaisonSoc.Text = "";
-            txbPraAdresse.Text = "";
-            txbPraCoeffConf.Text = "";
-            txbPraCoeffNot.Text = "";
-            txbPraTelephone.Text = "";
-            cbxPraSpec.Text = "";
-        }
-
         #endregion
 
-        private void btnVisUpdt_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dgvVisiteurs.SelectedRows)
-            {
-                txbVisId.Text = row.Cells[0].Value.ToString();
-                txbVisNom.Text = row.Cells[1].Value.ToString();
-                txbVisPrenom.Text = row.Cells[2].Value.ToString();
-                txbVisAdresse.Text = row.Cells[3].Value.ToString();
-                txbVisVille.Text = row.Cells[4].Value.ToString();
-                txbVisCp.Text = row.Cells[5].Value.ToString();
-                txbVisDateEmb.Text = row.Cells[6].Value.ToString();
-                cbxVisSecteur.Text = row.Cells[7].Value.ToString();
-            }
+       
 
-        }
+        
 
-        private void btnVisAnnuler_Click(object sender, EventArgs e)
-        {
-            txbVisNom.Text = "";
-            txbVisPrenom.Text = "";
-            txbVisAdresse.Text = "";
-            txbVisVille.Text = "";
-            txbVisCp.Text = "";
-            txbVisDateEmb.Text = "";
-            cbxVisSecteur.Text = "";
-        }
-
-        private void btnVisModifier_Click(object sender, EventArgs e)
-        {
-            Visiteur vis = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
-            DAOVisiteur.modifVisiteur(vis);
-            actualiserVisiteur();
-        }
-        private void btnVisAjouter_Click(object sender, EventArgs e)
-        {
-            Visiteur v = new Visiteur(txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
-            DAOVisiteur.creerVisiteur(v);
-            actualiserVisiteur();
-        }
-
-        private void btnVisSupprimer_Click(object sender, EventArgs e)
-        {
-            Visiteur v = new Visiteur(Int32.Parse(txbVisId.Text), txbVisNom.Text, txbVisPrenom.Text, txbVisAdresse.Text, txbVisCp.Text, txbVisVille.Text, txbVisDateEmb.Text, DAOSecteur.getIdSecteurFromNomSecteur(cbxVisSecteur.Text));
-            DAOVisiteur.supprimerVisiteur(v);
-            actualiserVisiteur();
-        }
-
-        private void btnPraSupprimer_Click(object sender, EventArgs e)
-        {
-            Praticien pra = new Praticien(Int32.Parse(txbPraCode.Text), txbPraRaisonSoc.Text,  txbPraAdresse.Text, txbPraTelephone.Text, txbPraContact.Text, Int32.Parse(txbPraCoeffConf.Text), Int32.Parse(txbPraCoeffNot.Text),  DAOSpecialite.getIdSpecialiteFromNomSpecialite(cbxPraSpec.Text));
-            DAOPraticien.delPraticien(pra);
-            actualiserPraticien();
-        }
-
-        private void btnPraRechercher_Click(object sender, EventArgs e)
-        {
-            listPraticiens = DAOPraticien.ListePraticiensRecherche(txbPraRechercher.Text);
-
-            dgvPraticiens.Rows.Clear();
-
-            for (int i = 0; i < listPraticiens.Count; i++)
-            {
-                Praticien p = listPraticiens.ElementAt(i);
-                Specialite s = p.Spec;
-                dgvPraticiens.Rows.Add(p.Code, p.Contact, p.Raison_sociale, p.Adresse, p.Telephone, p.Coef_notoriete, p.Coef_confiance, s.NomSpecialite);
-            }
-        }
-
-        private void btnPraActualiser_Click(object sender, EventArgs e)
-        {
-            actualiserPraticien();
-        }
+      
     }
 }
