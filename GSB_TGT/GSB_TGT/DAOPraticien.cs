@@ -88,6 +88,33 @@ namespace GSB_TGT
             }
         }
 
+        public static List<Praticien> ListePraticiensRecherche(string text)
+        {
+            string Req = "select Code, Raison_sociale, Adresse, Telephone, Contact, Coef_notoriete, coef_confiance, praticien.idSpecialite, nomSpecialite FROM praticien INNER JOIN specialite on praticien.idSpecialite = specialite.idSpecialite where raison_sociale Like '%" + text + "%' OR adresse Like '%" + text + "%'OR telephone Like '%" + text + "%' OR contact Like '%" + text + "%'OR coef_confiance Like '%" + text + "%' OR coef_notoriete Like '%" + text + "%' OR nomSpecialite Like '%" + text + "%' ;";
+            List<Praticien> LesPraticiensRecherche = new List<Praticien>();
+
+            try
+            {
+
+                SqlDataReader dr;
+                DAOFactory db = new DAOFactory();
+                db.connexion();
+                dr = db.execSQLread(Req);
+                while (dr.Read())
+                {
+                    Specialite specialite = new Specialite(Int32.Parse(dr[7].ToString()), dr[8].ToString());
+                    Praticien pra = new Praticien(Int32.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), Int32.Parse(dr[5].ToString()), Int32.Parse(dr[6].ToString()), specialite);
+                    LesPraticiensRecherche.Add(pra);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return LesPraticiensRecherche;
+        }
+
         public static int getIdSpecialitePraticien(Specialite nomSpecialite)
         {
             try

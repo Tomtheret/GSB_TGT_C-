@@ -115,6 +115,14 @@
             this.btnVisSupprimer = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.dgvVisiteurs = new System.Windows.Forms.DataGridView();
+            this.idVis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEmbauche = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -132,14 +140,7 @@
             this.txbVisVille = new System.Windows.Forms.TextBox();
             this.txbVisNom = new System.Windows.Forms.TextBox();
             this.txbVisPrenom = new System.Windows.Forms.TextBox();
-            this.idVis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEmbauche = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.secteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPraActualiser = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabProduits.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -528,6 +529,7 @@
             // tabPraticiens
             // 
             this.tabPraticiens.BackColor = System.Drawing.Color.LightGray;
+            this.tabPraticiens.Controls.Add(this.btnPraActualiser);
             this.tabPraticiens.Controls.Add(this.btnPraUpdt);
             this.tabPraticiens.Controls.Add(this.groupBox9);
             this.tabPraticiens.Controls.Add(this.groupBox8);
@@ -573,6 +575,7 @@
             this.btnPraRechercher.TabIndex = 2;
             this.btnPraRechercher.Text = "Rechercher";
             this.btnPraRechercher.UseVisualStyleBackColor = true;
+            this.btnPraRechercher.Click += new System.EventHandler(this.btnPraRechercher_Click);
             // 
             // label20
             // 
@@ -1023,6 +1026,46 @@
             this.dgvVisiteurs.Size = new System.Drawing.Size(641, 264);
             this.dgvVisiteurs.TabIndex = 0;
             // 
+            // idVis
+            // 
+            this.idVis.HeaderText = "Id";
+            this.idVis.Name = "idVis";
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
+            // 
+            // prenom
+            // 
+            this.prenom.HeaderText = "Prénom";
+            this.prenom.Name = "prenom";
+            // 
+            // adresse
+            // 
+            this.adresse.HeaderText = "Adresse";
+            this.adresse.Name = "adresse";
+            // 
+            // cp
+            // 
+            this.cp.HeaderText = "Code Postal";
+            this.cp.Name = "cp";
+            // 
+            // ville
+            // 
+            this.ville.HeaderText = "Ville";
+            this.ville.Name = "ville";
+            // 
+            // dateEmbauche
+            // 
+            this.dateEmbauche.HeaderText = "Date d\'embauche";
+            this.dateEmbauche.Name = "dateEmbauche";
+            // 
+            // secteur
+            // 
+            this.secteur.HeaderText = "Secteur";
+            this.secteur.Name = "secteur";
+            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -1179,45 +1222,17 @@
             this.txbVisPrenom.Size = new System.Drawing.Size(100, 20);
             this.txbVisPrenom.TabIndex = 0;
             // 
-            // idVis
+            // btnPraActualiser
             // 
-            this.idVis.HeaderText = "Id";
-            this.idVis.Name = "idVis";
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nom";
-            this.nom.Name = "nom";
-            // 
-            // prenom
-            // 
-            this.prenom.HeaderText = "Prénom";
-            this.prenom.Name = "prenom";
-            // 
-            // adresse
-            // 
-            this.adresse.HeaderText = "Adresse";
-            this.adresse.Name = "adresse";
-            // 
-            // cp
-            // 
-            this.cp.HeaderText = "Code Postal";
-            this.cp.Name = "cp";
-            // 
-            // ville
-            // 
-            this.ville.HeaderText = "Ville";
-            this.ville.Name = "ville";
-            // 
-            // dateEmbauche
-            // 
-            this.dateEmbauche.HeaderText = "Date d\'embauche";
-            this.dateEmbauche.Name = "dateEmbauche";
-            // 
-            // secteur
-            // 
-            this.secteur.HeaderText = "Secteur";
-            this.secteur.Name = "secteur";
+            this.btnPraActualiser.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnPraActualiser.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnPraActualiser.Location = new System.Drawing.Point(667, 406);
+            this.btnPraActualiser.Name = "btnPraActualiser";
+            this.btnPraActualiser.Size = new System.Drawing.Size(39, 25);
+            this.btnPraActualiser.TabIndex = 3;
+            this.btnPraActualiser.Text = "Actu";
+            this.btnPraActualiser.UseVisualStyleBackColor = false;
+            this.btnPraActualiser.Click += new System.EventHandler(this.btnPraActualiser_Click);
             // 
             // FrmGSB
             // 
@@ -1372,6 +1387,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ville;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmbauche;
         private System.Windows.Forms.DataGridViewTextBoxColumn secteur;
+        private System.Windows.Forms.Button btnPraActualiser;
     }
 }
 

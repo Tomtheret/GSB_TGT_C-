@@ -345,6 +345,23 @@ namespace GSB_TGT
             actualiserPraticien();
         }
 
+        private void btnPraRechercher_Click(object sender, EventArgs e)
+        {
+            listPraticiens = DAOPraticien.ListePraticiensRecherche(txbPraRechercher.Text);
 
+            dgvPraticiens.Rows.Clear();
+
+            for (int i = 0; i < listPraticiens.Count; i++)
+            {
+                Praticien p = listPraticiens.ElementAt(i);
+                Specialite s = p.Spec;
+                dgvPraticiens.Rows.Add(p.Code, p.Contact, p.Raison_sociale, p.Adresse, p.Telephone, p.Coef_notoriete, p.Coef_confiance, s.NomSpecialite);
+            }
+        }
+
+        private void btnPraActualiser_Click(object sender, EventArgs e)
+        {
+            actualiserPraticien();
+        }
     }
 }
